@@ -50,3 +50,12 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# folder ignore
+cmake/build
+build/
+
+# files ignore
+*.7z
+*.zip
+*.rar
