@@ -2,7 +2,7 @@ freertos_s32k144evb_cmake
 =============================
 
 # 介绍
-使用 NXP S32K144 芯片 ，集成 freertos ，进行led点亮，开发版为 s32k144evb
+使用 NXP S32K144 芯片 ，集成 freertos ，进行led点亮，开发版为 s32k144evb ，对应博文[2020年汽车电子软件主流构建方案讲解-cmake](https://zhuanlan.zhihu.com/p/338162422)
 
 # 目的
 本示例集成 FreeRTOS ，进行LED 灯间隔点亮 ，目的为指引常规嵌入式软件工程开发，并提供 IDE/Cmake构建系统 进行项目构建的示例及方法
