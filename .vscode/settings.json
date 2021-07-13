@@ -22,7 +22,8 @@
         "pin_mux.h": "c",
         "stdint.h": "c",
         "helper_functions.h": "c",
-        "adc_app.h": "c"
+        "adc_app.h": "c",
+        "uart_app.h": "c"
     }
 
 }

@@ -19,6 +19,7 @@
 #include "dmaController1.h"
 #include "lpuart1.h"
 #include "clockMan1.h"
+#include "string.h"
 
 /* Macro Define -------------------------------------------------------------*/
 
