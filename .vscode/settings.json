@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "name": "s32k",        
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/include"
+            ],
+            "defines": []
+        }
+    ],
+    "version": 4,
+    "files.associations": {
+        "cpu.h": "c",
+        "clock.h": "c",
+        "freertos.h": "c",
+        "portable.h": "c",
+        "ledcontrol.h": "c",
+        "rte_ledcontrol_type.h": "c",
+        "rte_type.h": "c",
+        "boarddefines.h": "c",
+        "pin_mux.h": "c",
+        "stdint.h": "c",
+        "helper_functions.h": "c",
+        "adc_app.h": "c"
+    }
+
+}

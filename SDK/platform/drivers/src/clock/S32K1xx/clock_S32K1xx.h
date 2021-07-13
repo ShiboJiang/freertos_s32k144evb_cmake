@@ -36,8 +36,8 @@
 
 #include "device_registers.h"
 #include "status.h"
-#include "stdint.h"
-#include "stdbool.h"
+#include <stdint.h>
+#include <stdbool.h>
 
 
 /*!

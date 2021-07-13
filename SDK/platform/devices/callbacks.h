@@ -17,7 +17,7 @@
 
 #ifndef CALLBACKS_H
 #define CALLBACKS_H
-#include "stdint.h"
+#include <stdint.h>
 /**
  * @page misra_violations MISRA-C:2012 violations
  *
@@ -28,7 +28,7 @@
  * The header defines callback types for all PAL modules.
  */
 
- #include "stdint.h"
+ #include <stdint.h>
 
 /*******************************************************************************
  * Definitions

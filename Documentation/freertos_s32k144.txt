@@ -323,6 +323,108 @@ Module "FreeRTOS"  (component FreeRTOS)
    - FreeRTOS_xTaskCallApplicationTaskHook -Calls the hook function associated with xTask. Passing xTask as NULL has the effect 
                 of calling the Running tasks (the calling task) hook function.
 
+Module "adc_pal1"  (component adc_pal)
+   - adc_pal1_ADC_Init -This function initializes the ADC PAL instance, including the other platform specific HW units used 
+                together with ADC. Notifications are default enabled after init.
+   - adc_pal1_ADC_Deinit -This function resets the ADC PAL instance, including the other platform specific HW units used 
+                together with ADC, if there are no active conversions.
+   - adc_pal1_ADC_EnableHardwareTrigger -Enables the selected HW trigger for a conversion group, if the conversion group has 
+                support for HW trigger. The function will return an error code if there is a conversion group already active. 
+                If the function succeeds, the conversion group will be triggered for execution when the selected HW trigger 
+                occurs.
+   - adc_pal1_ADC_DisableHardwareTrigger -This function disables HW trigger for a configured conversion group and also may stop 
+                its execution (depending on platform), if called when a conversion group is executing. If stopping is supported,
+                the execution shall be stopped according to device specific procedures. The function shall wait for the 
+                procedures to complete within the given timeout interval and return error code if they do not succeed.
+   - adc_pal1_ADC_StartGroupConversion -This function starts execution of a selected ADC conversion group, if there is no other 
+                conversion group active. Conversion groups started by ADC_StartGroupConversion shall not be preempted by HW 
+                triggered conversion groups.
+   - adc_pal1_ADC_StopGroupConversion -This function stops the execution of a SW triggered conversion group. The execution 
+                shall be stopped according to device specific procedures. The function shall wait for the procedures to 
+                complete within the given timeout interval and return error code if they do not succeed.
+   - adc_pal1_ADC_EnableNotification -This function enables the notification callback for a selected group of ADC conversions.
+   - adc_pal1_ADC_DisableNotification -This function disables the notification callback for a selected group of ADC conversions.
+
+Module "osif1"     (component osif)
+   - osif1_OSIF_TimeDelay -Delays execution for a number of milliseconds.
+   - osif1_OSIF_MutexLock -Waits for a mutex and locks it.
+   - osif1_OSIF_MutexUnlock -Unlocks a previously locked mutex.
+   - osif1_OSIF_MutexCreate -Create an unlocked mutex.
+   - osif1_OSIF_MutexDestroy -Destroys a previously created mutex.
+   - osif1_OSIF_SemaWait -Decrement a semaphore with timeout.
+   - osif1_OSIF_SemaPost -Increment a semaphore.
+   - osif1_OSIF_SemaCreate -Creates a semaphore with a given value.
+   - osif1_OSIF_SemaDestroy -Destroys a previously created semaphore.
+   - osif1_OSIF_GetMilliseconds -Returns the number of miliseconds elapsed since starting the internal timer or starting the 
+                scheduler.
+
+Module "lpuart1"   (component lpuart)
+   - lpuart1_LPUART_DRV_GetDefaultConfig -Initializes the LPUART configuration structure with default values.
+   - lpuart1_LPUART_DRV_Init -Initializes an LPUART operation instance.
+   - lpuart1_LPUART_DRV_Deinit -Shuts down the LPUART by disabling interrupts and transmitter/receiver.
+   - lpuart1_LPUART_DRV_InstallRxCallback -Installs callback function for the LPUART receive.
+   - lpuart1_LPUART_DRV_InstallTxCallback -Installs callback function for the LPUART transmit.
+   - lpuart1_LPUART_DRV_SendDataBlocking -Sends data out through the LPUART module using a blocking method.
+   - lpuart1_LPUART_DRV_SendDataPolling -Send out multiple bytes of data using polling method.
+   - lpuart1_LPUART_DRV_SendData -Sends data out through the LPUART module using a non-blocking method. This enables an a-sync 
+                method for transmitting data. When used with a non-blocking receive, the LPUART can perform a full duplex 
+                operation. Non-blocking means that the function returns immediately. The application has to get the transmit 
+                status to know when the transmit is complete.
+   - lpuart1_LPUART_DRV_GetTransmitStatus -Returns whether the previous transmit is complete.
+   - lpuart1_LPUART_DRV_AbortSendingData -Terminates a non-blocking transmission early.
+   - lpuart1_LPUART_DRV_ReceiveDataBlocking -Gets data from the LPUART module by using a blocking method. Blocking means that 
+                the function does not return until the receive is complete.
+   - lpuart1_LPUART_DRV_ReceiveDataPolling -Receive multiple bytes of data using polling method.
+   - lpuart1_LPUART_DRV_ReceiveData -Gets data from the LPUART module by using a non-blocking method. This enables an a-sync 
+                method for receiving data. When used with a non-blocking transmission, the LPUART can perform a full duplex 
+                operation. Non-blocking means that the function returns immediately. The application has to get the receive 
+                status to know when the receive is complete.
+   - lpuart1_LPUART_DRV_GetReceiveStatus -Returns whether the previous receive is complete.
+   - lpuart1_LPUART_DRV_AbortReceivingData -Terminates a non-blocking receive early.
+   - lpuart1_LPUART_DRV_SetBaudRate -Configures the LPUART baud rate.
+   - lpuart1_LPUART_DRV_GetBaudRate -Returns the LPUART baud rate.
+   - lpuart1_LPUART_DRV_SetTxBuffer -Sets the internal driver reference to the tx buffer.
+   - lpuart1_LPUART_DRV_SetRxBuffer -Sets the internal driver reference to the rx buffer.
+
+Module "dmaController1" (component edma)
+   - dmaController1_EDMA_DRV_Init -Initializes the eDMA module.
+   - dmaController1_EDMA_DRV_Deinit -Shuts down the eDMA module.
+   - dmaController1_EDMA_DRV_ChannelInit -Initializes a eDMA channel.
+   - dmaController1_EDMA_DRV_ReleaseChannel -Releases an eDMA channel.
+   - dmaController1_EDMA_DRV_StartChannel -Starts an eDMA channel.
+   - dmaController1_EDMA_DRV_StopChannel -Stops the eDMA channel.
+   - dmaController1_EDMA_DRV_InstallCallback -Registers the callback function and the parameter for eDMA channel.
+   - dmaController1_EDMA_DRV_GetChannelStatus -Gets the eDMA channel status.
+   - dmaController1_EDMA_DRV_PushConfigToReg -Copies the channel configuration to the TCD registers.
+   - dmaController1_EDMA_DRV_PushConfigToSTCD -Copies the channel configuration to the software TCD structure.
+   - dmaController1_EDMA_DRV_ConfigSingleBlockTransfer -Configures a simple single block data transfer with DMA. This function 
+                configures the descriptor for a single block transfer.
+   - dmaController1_EDMA_DRV_ConfigLoopTransfer -Configures the DMA transfer in loop mode.
+   - dmaController1_EDMA_DRV_ConfigScatterGatherTransfer -Configures the DMA transfer in a scatter-gather mode.
+   - dmaController1_EDMA_DRV_ConfigMultiBlockTransfer -Configures a multiple block data transfer with DMA. This function 
+                configures the descriptor for a multi block transfer.
+   - dmaController1_EDMA_DRV_CancelTransfer -Cancels the remaining data transfer.
+   - dmaController1_EDMA_DRV_SetChannelRequestAndTrigger -Configures the DMA request and periodic trigger for the eDMA channel.
+   - dmaController1_EDMA_DRV_ClearTCD -Clears all registers to 0 for the channel's TCD.
+   - dmaController1_EDMA_DRV_SetSrcAddr -Configures the source address for the eDMA channel.
+   - dmaController1_EDMA_DRV_SetSrcOffset -Configures the source address signed offset for the eDMA channel.
+   - dmaController1_EDMA_DRV_SetSrcReadChunkSize -Configures the source data chunk size (transferred in a read sequence).
+   - dmaController1_EDMA_DRV_SetDestAddr -Configures the destination address for the eDMA channel.
+   - dmaController1_EDMA_DRV_SetDestOffset -Configures the destination address signed offset for the eDMA channel.
+   - dmaController1_EDMA_DRV_SetDestWriteChunkSize -Configures the destination data chunk size (transferred in a write sequence)
+                .
+   - dmaController1_EDMA_DRV_SetMinorLoopBlockSize -Configures the number of bytes to be transferred in each service request of 
+                the channel.
+   - dmaController1_EDMA_DRV_SetMajorLoopIterationCount -Configures the number of major loop iterations.
+   - dmaController1_EDMA_DRV_GetRemainingMajorIterationsCount -Returns the remaining major loop iteration count.
+   - dmaController1_EDMA_DRV_SetScatterGatherLink -Configures the memory address of the next TCD, in scatter/gather mode.
+   - dmaController1_EDMA_DRV_DisableRequestsOnTransferComplete -Disables/Enables the DMA request after the major loop completes 
+                for the TCD.
+   - dmaController1_EDMA_DRV_SetSrcLastAddrAdjustment -Configures the source address last adjustment.
+   - dmaController1_EDMA_DRV_SetDestLastAddrAdjustment -Configures the destination address last adjustment.
+   - dmaController1_EDMA_DRV_ConfigureInterrupt -Disables/Enables the channel interrupt requests.
+   - dmaController1_EDMA_DRV_TriggerSwRequest -Triggers a sw request for the current channel.
+
 Module "Cpu"       (component S32K144_100)
    - Cpu_SystemInit -This function disables the watchdog, enables FPU and the power mode protection. SystemInit is called from 
                 startup_device file.

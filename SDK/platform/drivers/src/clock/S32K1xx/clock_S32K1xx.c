@@ -56,7 +56,7 @@
 #include "smc_hw_access.h"
 #include "clock.h"
 #include "interrupt_manager.h"
-#include "stddef.h"   /* This header is included for bool type */
+#include <stddef.h>   /* This header is included for bool type */
 /*
  * README:
  * This file provides these APIs:

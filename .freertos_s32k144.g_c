@@ -2,7 +2,7 @@
 <GenerationInfo_G_C>
   <Options>
     <ProjectName>freertos_s32k144</ProjectName>
-    <ProjectDirectory>C:\D\MyProjects\S32K\freertos_s32k144\</ProjectDirectory>
+    <ProjectDirectory>C:\D\git\freertos_s32k144evb_cmake\</ProjectDirectory>
     <ProjectMainModuleName>main</ProjectMainModuleName>
     <DestEventsDirectory>Sources\</DestEventsDirectory>
     <DestDriversSubDirectory>..\Generated_Code\</DestDriversSubDirectory>
@@ -14,12 +14,15 @@
       <LinkerFileGenerated>false</LinkerFileGenerated>
       <MakefileGenerated>false</MakefileGenerated>
       <GenSharedModules lines_count="0" />
-      <GenExtraFiles lines_count="1">
+      <GenExtraFiles lines_count="2">
         <Line>Generated_Code\FreeRTOSConfig.h</Line>
+        <Line>Generated_Code\adc_pal_cfg.h</Line>
       </GenExtraFiles>
-      <XtraAge0>1368609267</XtraAge0>
+      <XtraAge0>1391282554</XtraAge0>
+      <XtraAge1>1391291388</XtraAge1>
+      <GenExtraFileType1>4</GenExtraFileType1>
       <GenExtraFileType0>4</GenExtraFileType0>
-      <GenLinkedFiles lines_count="54">
+      <GenLinkedFiles lines_count="84">
         <Line>SDK\platform\devices\devassert.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\devices\devassert.h</Line>
         <Line>SDK\platform\devices\status.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\devices\status.h</Line>
         <Line>SDK\platform\devices\device_registers.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\devices\device_registers.h</Line>
@@ -31,6 +34,36 @@
         <Line>SDK\platform\devices\S32K144\startup\system_S32K144.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\devices\S32K144\startup\system_S32K144.c</Line>
         <Line>SDK\platform\devices\S32K144\include\S32K144_features.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\devices\S32K144\include\S32K144_features.h</Line>
         <Line>SDK\platform\devices\S32K144\include\S32K144.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\devices\S32K144\include\S32K144.h</Line>
+        <Line>SDK\platform\drivers\src\adc\adc_driver.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\adc\adc_driver.c</Line>
+        <Line>SDK\platform\drivers\src\adc\adc_hw_access.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\adc\adc_hw_access.h</Line>
+        <Line>SDK\platform\drivers\inc\adc_driver.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\inc\adc_driver.h</Line>
+        <Line>SDK\platform\drivers\src\pdb\pdb_driver.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\pdb\pdb_driver.c</Line>
+        <Line>SDK\platform\drivers\src\pdb\pdb_hw_access.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\pdb\pdb_hw_access.c</Line>
+        <Line>SDK\platform\drivers\src\pdb\pdb_hw_access.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\pdb\pdb_hw_access.h</Line>
+        <Line>SDK\platform\drivers\inc\pdb_driver.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\inc\pdb_driver.h</Line>
+        <Line>SDK\platform\drivers\src\trgmux\trgmux_driver.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\trgmux\trgmux_driver.c</Line>
+        <Line>SDK\platform\drivers\src\trgmux\trgmux_hw_access.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\trgmux\trgmux_hw_access.c</Line>
+        <Line>SDK\platform\drivers\src\trgmux\trgmux_hw_access.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\trgmux\trgmux_hw_access.h</Line>
+        <Line>SDK\platform\drivers\inc\trgmux_driver.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\inc\trgmux_driver.h</Line>
+        <Line>SDK\platform\drivers\src\lpuart\lpuart_hw_access.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\lpuart\lpuart_hw_access.c</Line>
+        <Line>SDK\platform\drivers\src\lpuart\lpuart_hw_access.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\lpuart\lpuart_hw_access.h</Line>
+        <Line>SDK\platform\drivers\src\lpuart\lpuart_driver.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\lpuart\lpuart_driver.c</Line>
+        <Line>SDK\platform\drivers\src\lpuart\lpuart_irq.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\lpuart\lpuart_irq.c</Line>
+        <Line>SDK\platform\drivers\src\lpuart\lpuart_irq.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\lpuart\lpuart_irq.h</Line>
+        <Line>SDK\platform\drivers\inc\lpuart_driver.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\inc\lpuart_driver.h</Line>
+        <Line>SDK\platform\drivers\src\edma\edma_driver.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\edma\edma_driver.c</Line>
+        <Line>SDK\platform\drivers\src\edma\edma_hw_access.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\edma\edma_hw_access.c</Line>
+        <Line>SDK\platform\drivers\src\edma\edma_irq.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\edma\edma_irq.c</Line>
+        <Line>SDK\platform\drivers\src\edma\edma_hw_access.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\edma\edma_hw_access.h</Line>
+        <Line>SDK\platform\drivers\src\edma\edma_irq.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\edma\edma_irq.h</Line>
+        <Line>SDK\platform\drivers\inc\edma_driver.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\inc\edma_driver.h</Line>
+        <Line>SDK\platform\pal\src\adc\adc_pal.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\pal\src\adc\adc_pal.c</Line>
+        <Line>SDK\platform\pal\src\adc\adc_irq.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\pal\src\adc\adc_irq.c</Line>
+        <Line>SDK\platform\pal\src\adc\adc_irq.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\pal\src\adc\adc_irq.h</Line>
+        <Line>SDK\platform\pal\inc\adc_pal_mapping.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\pal\inc\adc_pal_mapping.h</Line>
+        <Line>SDK\platform\pal\inc\adc_pal.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\pal\inc\adc_pal.h</Line>
+        <Line>SDK\rtos\osif\osif.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\rtos\osif\osif.h</Line>
+        <Line>SDK\rtos\osif\osif_freertos.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\rtos\osif\osif_freertos.c</Line>
         <Line>SDK\rtos\FreeRTOS_S32K\Source\croutine.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\rtos\FreeRTOS_S32K\Source\croutine.c</Line>
         <Line>SDK\rtos\FreeRTOS_S32K\Source\event_groups.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\rtos\FreeRTOS_S32K\Source\event_groups.c</Line>
         <Line>SDK\rtos\FreeRTOS_S32K\Source\list.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\rtos\FreeRTOS_S32K\Source\list.c</Line>
@@ -84,23 +117,29 @@
         <Line>FreeRTOS_vApplicationStackOverflowHook</Line>
         <Line>FreeRTOS_vApplicationMallocFailedHook</Line>
       </GenMethodsInEvents>
-      <GenAllModules lines_count="5">
+      <GenAllModules lines_count="8">
+        <Line>adc_pal1</Line>
         <Line>clockMan1</Line>
         <Line>Cpu</Line>
+        <Line>dmaController1</Line>
         <Line>Events</Line>
         <Line>FreeRTOS</Line>
+        <Line>lpuart1</Line>
         <Line>pin_mux</Line>
       </GenAllModules>
       <GenExternModules lines_count="0" />
-      <GenBeanModules lines_count="3">
+      <GenBeanModules lines_count="6">
         <Line>clockMan1</Line>
         <Line>pin_mux</Line>
         <Line>FreeRTOS</Line>
+        <Line>adc_pal1</Line>
+        <Line>lpuart1</Line>
+        <Line>dmaController1</Line>
       </GenBeanModules>
     </GenFiles>
     <SignalListFile />
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>25</ProjectModificationStamp>
+    <ProjectModificationStamp>27</ProjectModificationStamp>
   </Options>
   <CpuID_23>
     <Generated>true</Generated>
@@ -108,8 +147,8 @@
     <GenComponentVersion>01.197</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1368609267</HeaderAge>
-    <CodeAge>1368609267</CodeAge>
+    <HeaderAge>1391291876</HeaderAge>
+    <CodeAge>1391282554</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>3</GenNumMethods>
     <SystemInit>true</SystemInit>
@@ -122,18 +161,30 @@
     <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
     <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
     <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
-    <GenExtraFilesCount>11</GenExtraFilesCount>
-    <ExtraFile0>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\devices\S32K144\include\S32K144.h</ExtraFile0>
-    <ExtraFile1>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\devices\S32K144\include\S32K144_features.h</ExtraFile1>
-    <ExtraFile2>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\devices\S32K144\startup\system_S32K144.c</ExtraFile2>
-    <ExtraFile3>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\devices\S32K144\startup\system_S32K144.h</ExtraFile3>
-    <ExtraFile4>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\devices\startup.c</ExtraFile4>
-    <ExtraFile5>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\devices\startup.h</ExtraFile5>
-    <ExtraFile6>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\devices\common\s32_core_cm4.h</ExtraFile6>
-    <ExtraFile7>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\devices\callbacks.h</ExtraFile7>
-    <ExtraFile8>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\devices\device_registers.h</ExtraFile8>
-    <ExtraFile9>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\devices\status.h</ExtraFile9>
-    <ExtraFile10>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\devices\devassert.h</ExtraFile10>
+    <GenExtraFilesCount>23</GenExtraFilesCount>
+    <ExtraFile0>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\inc\trgmux_driver.h</ExtraFile0>
+    <ExtraFile1>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\trgmux\trgmux_hw_access.h</ExtraFile1>
+    <ExtraFile2>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\trgmux\trgmux_hw_access.c</ExtraFile2>
+    <ExtraFile3>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\trgmux\trgmux_driver.c</ExtraFile3>
+    <ExtraFile4>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\inc\pdb_driver.h</ExtraFile4>
+    <ExtraFile5>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\pdb\pdb_hw_access.h</ExtraFile5>
+    <ExtraFile6>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\pdb\pdb_hw_access.c</ExtraFile6>
+    <ExtraFile7>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\pdb\pdb_driver.c</ExtraFile7>
+    <ExtraFile8>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\inc\adc_driver.h</ExtraFile8>
+    <ExtraFile9>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\adc\adc_hw_access.h</ExtraFile9>
+    <ExtraFile10>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\adc\adc_driver.c</ExtraFile10>
+    <ExtraFile11>Generated_Code\adc_pal_cfg.h</ExtraFile11>
+    <ExtraFile12>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\devices\S32K144\include\S32K144.h</ExtraFile12>
+    <ExtraFile13>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\devices\S32K144\include\S32K144_features.h</ExtraFile13>
+    <ExtraFile14>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\devices\S32K144\startup\system_S32K144.c</ExtraFile14>
+    <ExtraFile15>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\devices\S32K144\startup\system_S32K144.h</ExtraFile15>
+    <ExtraFile16>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\devices\startup.c</ExtraFile16>
+    <ExtraFile17>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\devices\startup.h</ExtraFile17>
+    <ExtraFile18>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\devices\common\s32_core_cm4.h</ExtraFile18>
+    <ExtraFile19>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\devices\callbacks.h</ExtraFile19>
+    <ExtraFile20>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\devices\device_registers.h</ExtraFile20>
+    <ExtraFile21>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\devices\status.h</ExtraFile21>
+    <ExtraFile22>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\devices\devassert.h</ExtraFile22>
   </CpuID_23>
   <ComponentID_15>
     <Generated>true</Generated>
@@ -141,8 +192,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1368609267</HeaderAge>
-    <CodeAge>1368609267</CodeAge>
+    <HeaderAge>1391291876</HeaderAge>
+    <CodeAge>1391291876</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>6</GenNumMethods>
     <CLOCK_DRV_Init>true</CLOCK_DRV_Init>
@@ -157,15 +208,15 @@
     <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
     <GenMethodPos>0</GenMethodPos>
     <GenExtraFilesCount>9</GenExtraFilesCount>
-    <ExtraFile0>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\drivers\inc\clock_manager.h</ExtraFile0>
-    <ExtraFile1>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\drivers\inc\clock.h</ExtraFile1>
-    <ExtraFile2>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\drivers\src\clock\S32K1xx\smc_hw_access.h</ExtraFile2>
-    <ExtraFile3>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\drivers\src\clock\S32K1xx\sim_hw_access.h</ExtraFile3>
-    <ExtraFile4>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\drivers\src\clock\S32K1xx\scg_hw_access.h</ExtraFile4>
-    <ExtraFile5>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\drivers\src\clock\S32K1xx\pmc_hw_access.h</ExtraFile5>
-    <ExtraFile6>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\drivers\src\clock\S32K1xx\pcc_hw_access.h</ExtraFile6>
-    <ExtraFile7>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\drivers\src\clock\S32K1xx\clock_S32K1xx.h</ExtraFile7>
-    <ExtraFile8>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\drivers\src\clock\S32K1xx\clock_S32K1xx.c</ExtraFile8>
+    <ExtraFile0>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\inc\clock_manager.h</ExtraFile0>
+    <ExtraFile1>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\inc\clock.h</ExtraFile1>
+    <ExtraFile2>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\clock\S32K1xx\smc_hw_access.h</ExtraFile2>
+    <ExtraFile3>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\clock\S32K1xx\sim_hw_access.h</ExtraFile3>
+    <ExtraFile4>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\clock\S32K1xx\scg_hw_access.h</ExtraFile4>
+    <ExtraFile5>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\clock\S32K1xx\pmc_hw_access.h</ExtraFile5>
+    <ExtraFile6>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\clock\S32K1xx\pcc_hw_access.h</ExtraFile6>
+    <ExtraFile7>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\clock\S32K1xx\clock_S32K1xx.h</ExtraFile7>
+    <ExtraFile8>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\clock\S32K1xx\clock_S32K1xx.c</ExtraFile8>
   </ComponentID_15>
   <ComponentID_13>
     <Generated>true</Generated>
@@ -173,8 +224,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>1.4</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1368609267</HeaderAge>
-    <CodeAge>1368609267</CodeAge>
+    <HeaderAge>1391282554</HeaderAge>
+    <CodeAge>1391282554</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>25</GenNumMethods>
     <PINS_DRV_Init>true</PINS_DRV_Init>
@@ -208,11 +259,11 @@
     <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
     <GenMethodPos>0</GenMethodPos>
     <GenExtraFilesCount>5</GenExtraFilesCount>
-    <ExtraFile0>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\drivers\src\pins\pins_port_hw_access.h</ExtraFile0>
-    <ExtraFile1>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\drivers\src\pins\pins_port_hw_access.c</ExtraFile1>
-    <ExtraFile2>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\drivers\inc\pins_driver.h</ExtraFile2>
-    <ExtraFile3>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\drivers\src\pins\pins_gpio_hw_access.h</ExtraFile3>
-    <ExtraFile4>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\drivers\src\pins\pins_driver.c</ExtraFile4>
+    <ExtraFile0>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\pins\pins_port_hw_access.h</ExtraFile0>
+    <ExtraFile1>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\pins\pins_port_hw_access.c</ExtraFile1>
+    <ExtraFile2>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\inc\pins_driver.h</ExtraFile2>
+    <ExtraFile3>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\pins\pins_gpio_hw_access.h</ExtraFile3>
+    <ExtraFile4>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\pins\pins_driver.c</ExtraFile4>
   </ComponentID_13>
   <ComponentID_21>
     <Generated>true</Generated>
@@ -244,8 +295,8 @@
     <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
     <GenMethodPos>0</GenMethodPos>
     <GenExtraFilesCount>2</GenExtraFilesCount>
-    <ExtraFile0>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\drivers\inc\interrupt_manager.h</ExtraFile0>
-    <ExtraFile1>C:\D\MyProjects\S32K\freertos_s32k144\SDK\platform\drivers\src\interrupt\interrupt_manager.c</ExtraFile1>
+    <ExtraFile0>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\inc\interrupt_manager.h</ExtraFile0>
+    <ExtraFile1>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\interrupt\interrupt_manager.c</ExtraFile1>
   </ComponentID_21>
   <ComponentID_24>
     <Generated>true</Generated>
@@ -383,76 +434,245 @@
     <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
     <GenMethodPos>0</GenMethodPos>
     <GenExtraFilesCount>28</GenExtraFilesCount>
-    <ExtraFile0>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\portable\GCC\ARM_CM4F\portmacro.h</ExtraFile0>
-    <ExtraFile1>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\portable\GCC\ARM_CM4F\port.c</ExtraFile1>
+    <ExtraFile0>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\portable\GCC\ARM_CM4F\portmacro.h</ExtraFile0>
+    <ExtraFile1>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\portable\GCC\ARM_CM4F\port.c</ExtraFile1>
     <ExtraFile2>Generated_Code\FreeRTOSConfig.h</ExtraFile2>
-    <ExtraFile3>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\portable\MemMang\heap_2.c</ExtraFile3>
-    <ExtraFile4>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\timers.h</ExtraFile4>
-    <ExtraFile5>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\task.h</ExtraFile5>
-    <ExtraFile6>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\stream_buffer.h</ExtraFile6>
-    <ExtraFile7>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\stack_macros.h</ExtraFile7>
-    <ExtraFile8>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\StackMacros.h</ExtraFile8>
-    <ExtraFile9>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\semphr.h</ExtraFile9>
-    <ExtraFile10>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\queue.h</ExtraFile10>
-    <ExtraFile11>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\projdefs.h</ExtraFile11>
-    <ExtraFile12>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\portable.h</ExtraFile12>
-    <ExtraFile13>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\mpu_wrappers.h</ExtraFile13>
-    <ExtraFile14>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\mpu_prototypes.h</ExtraFile14>
-    <ExtraFile15>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\message_buffer.h</ExtraFile15>
-    <ExtraFile16>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\list.h</ExtraFile16>
-    <ExtraFile17>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\FreeRTOS.h</ExtraFile17>
-    <ExtraFile18>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\event_groups.h</ExtraFile18>
-    <ExtraFile19>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\deprecated_definitions.h</ExtraFile19>
-    <ExtraFile20>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\include\croutine.h</ExtraFile20>
-    <ExtraFile21>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\timers.c</ExtraFile21>
-    <ExtraFile22>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\tasks.c</ExtraFile22>
-    <ExtraFile23>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\stream_buffer.c</ExtraFile23>
-    <ExtraFile24>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\queue.c</ExtraFile24>
-    <ExtraFile25>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\list.c</ExtraFile25>
-    <ExtraFile26>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\event_groups.c</ExtraFile26>
-    <ExtraFile27>C:\D\MyProjects\S32K\freertos_s32k144\SDK\rtos\FreeRTOS_S32K\Source\croutine.c</ExtraFile27>
+    <ExtraFile3>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\portable\MemMang\heap_2.c</ExtraFile3>
+    <ExtraFile4>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\timers.h</ExtraFile4>
+    <ExtraFile5>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\task.h</ExtraFile5>
+    <ExtraFile6>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\stream_buffer.h</ExtraFile6>
+    <ExtraFile7>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\stack_macros.h</ExtraFile7>
+    <ExtraFile8>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\StackMacros.h</ExtraFile8>
+    <ExtraFile9>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\semphr.h</ExtraFile9>
+    <ExtraFile10>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\queue.h</ExtraFile10>
+    <ExtraFile11>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\projdefs.h</ExtraFile11>
+    <ExtraFile12>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\portable.h</ExtraFile12>
+    <ExtraFile13>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\mpu_wrappers.h</ExtraFile13>
+    <ExtraFile14>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\mpu_prototypes.h</ExtraFile14>
+    <ExtraFile15>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\message_buffer.h</ExtraFile15>
+    <ExtraFile16>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\list.h</ExtraFile16>
+    <ExtraFile17>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\FreeRTOS.h</ExtraFile17>
+    <ExtraFile18>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\event_groups.h</ExtraFile18>
+    <ExtraFile19>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\deprecated_definitions.h</ExtraFile19>
+    <ExtraFile20>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\include\croutine.h</ExtraFile20>
+    <ExtraFile21>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\timers.c</ExtraFile21>
+    <ExtraFile22>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\tasks.c</ExtraFile22>
+    <ExtraFile23>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\stream_buffer.c</ExtraFile23>
+    <ExtraFile24>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\queue.c</ExtraFile24>
+    <ExtraFile25>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\list.c</ExtraFile25>
+    <ExtraFile26>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\event_groups.c</ExtraFile26>
+    <ExtraFile27>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\FreeRTOS_S32K\Source\croutine.c</ExtraFile27>
   </ComponentID_24>
+  <ComponentID_28>
+    <Generated>true</Generated>
+    <GenCompName>adc_pal1</GenCompName>
+    <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
+    <GenDriverVersion>01.00</GenDriverVersion>
+    <GenEventModule />
+    <HeaderAge>1391291388</HeaderAge>
+    <CodeAge>1391291388</CodeAge>
+    <AsemblAge>-1</AsemblAge>
+    <GenNumMethods>8</GenNumMethods>
+    <ADC_Init>true</ADC_Init>
+    <ADC_Deinit>true</ADC_Deinit>
+    <ADC_EnableHardwareTrigger>true</ADC_EnableHardwareTrigger>
+    <ADC_DisableHardwareTrigger>true</ADC_DisableHardwareTrigger>
+    <ADC_StartGroupConversion>true</ADC_StartGroupConversion>
+    <ADC_StopGroupConversion>true</ADC_StopGroupConversion>
+    <ADC_EnableNotification>true</ADC_EnableNotification>
+    <ADC_DisableNotification>true</ADC_DisableNotification>
+    <GenNumEvents>0</GenNumEvents>
+    <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
+    <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
+    <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
+    <GenMethodPos>0</GenMethodPos>
+    <GenExtraFilesCount>5</GenExtraFilesCount>
+    <ExtraFile0>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\pal\inc\adc_pal.h</ExtraFile0>
+    <ExtraFile1>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\pal\inc\adc_pal_mapping.h</ExtraFile1>
+    <ExtraFile2>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\pal\src\adc\adc_irq.h</ExtraFile2>
+    <ExtraFile3>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\pal\src\adc\adc_irq.c</ExtraFile3>
+    <ExtraFile4>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\pal\src\adc\adc_pal.c</ExtraFile4>
+  </ComponentID_28>
+  <ComponentID_29>
+    <Generated>true</Generated>
+    <GenCompName>osif1</GenCompName>
+    <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
+    <GenDriverVersion>01.00</GenDriverVersion>
+    <GenEventModule />
+    <HeaderAge>-1</HeaderAge>
+    <CodeAge>-1</CodeAge>
+    <AsemblAge>-1</AsemblAge>
+    <GenNumMethods>10</GenNumMethods>
+    <OSIF_TimeDelay>true</OSIF_TimeDelay>
+    <OSIF_MutexLock>true</OSIF_MutexLock>
+    <OSIF_MutexUnlock>true</OSIF_MutexUnlock>
+    <OSIF_MutexCreate>true</OSIF_MutexCreate>
+    <OSIF_MutexDestroy>true</OSIF_MutexDestroy>
+    <OSIF_SemaWait>true</OSIF_SemaWait>
+    <OSIF_SemaPost>true</OSIF_SemaPost>
+    <OSIF_SemaCreate>true</OSIF_SemaCreate>
+    <OSIF_SemaDestroy>true</OSIF_SemaDestroy>
+    <OSIF_GetMilliseconds>true</OSIF_GetMilliseconds>
+    <GenNumEvents>0</GenNumEvents>
+    <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
+    <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
+    <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
+    <GenMethodPos>0</GenMethodPos>
+    <GenExtraFilesCount>2</GenExtraFilesCount>
+    <ExtraFile0>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\osif\osif_freertos.c</ExtraFile0>
+    <ExtraFile1>C:\D\git\freertos_s32k144evb_cmake\SDK\rtos\osif\osif.h</ExtraFile1>
+  </ComponentID_29>
+  <ComponentID_32>
+    <Generated>true</Generated>
+    <GenCompName>lpuart1</GenCompName>
+    <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
+    <GenDriverVersion>01.00</GenDriverVersion>
+    <GenEventModule />
+    <HeaderAge>1391291876</HeaderAge>
+    <CodeAge>1391291876</CodeAge>
+    <AsemblAge>-1</AsemblAge>
+    <GenNumMethods>19</GenNumMethods>
+    <LPUART_DRV_GetDefaultConfig>true</LPUART_DRV_GetDefaultConfig>
+    <LPUART_DRV_Init>true</LPUART_DRV_Init>
+    <LPUART_DRV_Deinit>true</LPUART_DRV_Deinit>
+    <LPUART_DRV_InstallRxCallback>true</LPUART_DRV_InstallRxCallback>
+    <LPUART_DRV_InstallTxCallback>true</LPUART_DRV_InstallTxCallback>
+    <LPUART_DRV_SendDataBlocking>true</LPUART_DRV_SendDataBlocking>
+    <LPUART_DRV_SendDataPolling>true</LPUART_DRV_SendDataPolling>
+    <LPUART_DRV_SendData>true</LPUART_DRV_SendData>
+    <LPUART_DRV_GetTransmitStatus>true</LPUART_DRV_GetTransmitStatus>
+    <LPUART_DRV_AbortSendingData>true</LPUART_DRV_AbortSendingData>
+    <LPUART_DRV_ReceiveDataBlocking>true</LPUART_DRV_ReceiveDataBlocking>
+    <LPUART_DRV_ReceiveDataPolling>true</LPUART_DRV_ReceiveDataPolling>
+    <LPUART_DRV_ReceiveData>true</LPUART_DRV_ReceiveData>
+    <LPUART_DRV_GetReceiveStatus>true</LPUART_DRV_GetReceiveStatus>
+    <LPUART_DRV_AbortReceivingData>true</LPUART_DRV_AbortReceivingData>
+    <LPUART_DRV_SetBaudRate>true</LPUART_DRV_SetBaudRate>
+    <LPUART_DRV_GetBaudRate>true</LPUART_DRV_GetBaudRate>
+    <LPUART_DRV_SetTxBuffer>true</LPUART_DRV_SetTxBuffer>
+    <LPUART_DRV_SetRxBuffer>true</LPUART_DRV_SetRxBuffer>
+    <GenNumEvents>0</GenNumEvents>
+    <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
+    <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
+    <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
+    <GenMethodPos>0</GenMethodPos>
+    <GenExtraFilesCount>6</GenExtraFilesCount>
+    <ExtraFile0>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\inc\lpuart_driver.h</ExtraFile0>
+    <ExtraFile1>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\lpuart\lpuart_irq.h</ExtraFile1>
+    <ExtraFile2>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\lpuart\lpuart_irq.c</ExtraFile2>
+    <ExtraFile3>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\lpuart\lpuart_driver.c</ExtraFile3>
+    <ExtraFile4>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\lpuart\lpuart_hw_access.h</ExtraFile4>
+    <ExtraFile5>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\lpuart\lpuart_hw_access.c</ExtraFile5>
+  </ComponentID_32>
+  <ComponentID_33>
+    <Generated>true</Generated>
+    <GenCompName>dmaController1</GenCompName>
+    <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
+    <GenDriverVersion>01.00</GenDriverVersion>
+    <GenEventModule />
+    <HeaderAge>1391291876</HeaderAge>
+    <CodeAge>1391291876</CodeAge>
+    <AsemblAge>-1</AsemblAge>
+    <GenNumMethods>32</GenNumMethods>
+    <EDMA_DRV_Init>true</EDMA_DRV_Init>
+    <EDMA_DRV_Deinit>true</EDMA_DRV_Deinit>
+    <EDMA_DRV_ChannelInit>true</EDMA_DRV_ChannelInit>
+    <EDMA_DRV_ReleaseChannel>true</EDMA_DRV_ReleaseChannel>
+    <EDMA_DRV_StartChannel>true</EDMA_DRV_StartChannel>
+    <EDMA_DRV_StopChannel>true</EDMA_DRV_StopChannel>
+    <EDMA_DRV_InstallCallback>true</EDMA_DRV_InstallCallback>
+    <EDMA_DRV_GetChannelStatus>true</EDMA_DRV_GetChannelStatus>
+    <EDMA_DRV_PushConfigToReg>true</EDMA_DRV_PushConfigToReg>
+    <EDMA_DRV_PushConfigToSTCD>true</EDMA_DRV_PushConfigToSTCD>
+    <EDMA_DRV_ConfigSingleBlockTransfer>true</EDMA_DRV_ConfigSingleBlockTransfer>
+    <EDMA_DRV_ConfigLoopTransfer>true</EDMA_DRV_ConfigLoopTransfer>
+    <EDMA_DRV_ConfigScatterGatherTransfer>true</EDMA_DRV_ConfigScatterGatherTransfer>
+    <EDMA_DRV_ConfigMultiBlockTransfer>true</EDMA_DRV_ConfigMultiBlockTransfer>
+    <EDMA_DRV_CancelTransfer>true</EDMA_DRV_CancelTransfer>
+    <EDMA_DRV_SetChannelRequestAndTrigger>true</EDMA_DRV_SetChannelRequestAndTrigger>
+    <EDMA_DRV_ClearTCD>true</EDMA_DRV_ClearTCD>
+    <EDMA_DRV_SetSrcAddr>true</EDMA_DRV_SetSrcAddr>
+    <EDMA_DRV_SetSrcOffset>true</EDMA_DRV_SetSrcOffset>
+    <EDMA_DRV_SetSrcReadChunkSize>true</EDMA_DRV_SetSrcReadChunkSize>
+    <EDMA_DRV_SetDestAddr>true</EDMA_DRV_SetDestAddr>
+    <EDMA_DRV_SetDestOffset>true</EDMA_DRV_SetDestOffset>
+    <EDMA_DRV_SetDestWriteChunkSize>true</EDMA_DRV_SetDestWriteChunkSize>
+    <EDMA_DRV_SetMinorLoopBlockSize>true</EDMA_DRV_SetMinorLoopBlockSize>
+    <EDMA_DRV_SetMajorLoopIterationCount>true</EDMA_DRV_SetMajorLoopIterationCount>
+    <EDMA_DRV_GetRemainingMajorIterationsCount>true</EDMA_DRV_GetRemainingMajorIterationsCount>
+    <EDMA_DRV_SetScatterGatherLink>true</EDMA_DRV_SetScatterGatherLink>
+    <EDMA_DRV_DisableRequestsOnTransferComplete>true</EDMA_DRV_DisableRequestsOnTransferComplete>
+    <EDMA_DRV_SetSrcLastAddrAdjustment>true</EDMA_DRV_SetSrcLastAddrAdjustment>
+    <EDMA_DRV_SetDestLastAddrAdjustment>true</EDMA_DRV_SetDestLastAddrAdjustment>
+    <EDMA_DRV_ConfigureInterrupt>true</EDMA_DRV_ConfigureInterrupt>
+    <EDMA_DRV_TriggerSwRequest>true</EDMA_DRV_TriggerSwRequest>
+    <GenNumEvents>0</GenNumEvents>
+    <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
+    <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
+    <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
+    <GenMethodPos>0</GenMethodPos>
+    <GenExtraFilesCount>6</GenExtraFilesCount>
+    <ExtraFile0>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\inc\edma_driver.h</ExtraFile0>
+    <ExtraFile1>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\edma\edma_irq.h</ExtraFile1>
+    <ExtraFile2>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\edma\edma_hw_access.h</ExtraFile2>
+    <ExtraFile3>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\edma\edma_irq.c</ExtraFile3>
+    <ExtraFile4>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\edma\edma_hw_access.c</ExtraFile4>
+    <ExtraFile5>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\edma\edma_driver.c</ExtraFile5>
+  </ComponentID_33>
   <UsedSrcFiles>
-    <SrcFile0>Drivers\S32K\S32_SDK_S32K\clock_manager.drv=-1</SrcFile0>
-    <SrcFile1>Drivers\interrupt_manager.src=-1</SrcFile1>
-    <SrcFile2>Drivers\FreeRTOS.src=-1</SrcFile2>
-    <SrcFile3>Drivers\Common\Header.h=1316652645</SrcFile3>
-    <SrcFile4>Beans\_SDK\SdkOptions.chg=1331017399</SrcFile4>
-    <SrcFile5>Drivers\sw\RTOSAdaptor\Common_RTOSAdaptor.prg=1345390891</SrcFile5>
-    <SrcFile6>Drivers\Common\EBGNSupport\StringLib.prg=1316652646</SrcFile6>
-    <SrcFile7>Drivers\Common\Header.c=1316652645</SrcFile7>
-    <SrcFile8>Drivers\S32K\S32K144_SDK01\_FreeRTOS.drv=-1</SrcFile8>
-    <SrcFile9>Drivers\sw\RTOSAdaptor\Default_RTOSAdaptor.prg=1345390891</SrcFile9>
-    <SrcFile10>Drivers\Common\S32KSettings.inc=1316652645</SrcFile10>
-    <SrcFile11>Drivers\S32K\PinSettings_S32K144_100.prg=-1</SrcFile11>
-    <SrcFile12>Drivers\Common\HeaderFreescale.C=1316652645</SrcFile12>
-    <SrcFile13>Drivers\Common\RTOSAdaptor.prg=1316652645</SrcFile13>
-    <SrcFile14>Drivers\Common\WriteBlock_NotRst.prg=1316652645</SrcFile14>
-    <SrcFile15>Drivers\S32K\S32K144_SDK01\HAL_Port_Bridge.prg=1316652646</SrcFile15>
-    <SrcFile16>Drivers\sw\PinSettings.drv=-1</SrcFile16>
-    <SrcFile17>Drivers\Common\Header.doxy=1345390891</SrcFile17>
-    <SrcFile18>Drivers\Common\GenInitConfigSequence.prg=1316652645</SrcFile18>
-    <SrcFile19>Drivers\S32K\S32K144_SDK01\interrupt_manager.drv=1316652646</SrcFile19>
-    <SrcFile20>Drivers\Common\InitRegBlock.prg=1316652645</SrcFile20>
-    <SrcFile21>Drivers\S32K\S32K144_SDK01\StaticSdk_S32K.prg=1316652646</SrcFile21>
-    <SrcFile22>Drivers\PinSettings.src=-1</SrcFile22>
-    <SrcFile23>Drivers\Common\PinSettingsAbstract.inc=-1</SrcFile23>
-    <SrcFile24>Drivers\S32K\HAL_Port_Bridge_V2.prg=1316652646</SrcFile24>
-    <SrcFile25>Drivers\Common\InitReg32Block.prg=1316652645</SrcFile25>
-    <SrcFile26>Drivers\PEx_S32K.src=1316652645</SrcFile26>
-    <SrcFile27>Drivers\S32K\StaticSdk_S32K_V4.drv=1316652646</SrcFile27>
-    <SrcFile28>Drivers\Common\Static_SupportSubroutines.prg=1316652645</SrcFile28>
-    <SrcFile29>Drivers\Common\ToolChain_Settings.prg=1316652645</SrcFile29>
-    <SrcFile30>Drivers\S32K\S32_SDK_S32K\clock_manager_code.drv=-1</SrcFile30>
-    <SrcFile31>Drivers\Common\S32KAbstract.inc=1316652645</SrcFile31>
-    <SrcFile32>Drivers\S32K\S32K144_SDK01\FreeRTOS.drv=-1</SrcFile32>
-    <SrcFile33>Drivers\Common\HeaderCopyright.inc=1316652645</SrcFile33>
-    <SrcFile34>Drivers\S32K\StaticSdk_S32K.drv=1316652646</SrcFile34>
-    <SrcFile35>Drivers\GlobalConfigFiles.drv=1316652645</SrcFile35>
-    <SrcFile36>Drivers\Common\HeaderFreescale.h=1316652645</SrcFile36>
-    <SrcFile37>Drivers\clock_manager.src=-1</SrcFile37>
-    <SrcFile38>Drivers\Common\Header.end=1316652645</SrcFile38>
-    <SrcFile39>Drivers\Common\EBGNSupport\TimingLib.prg=1316652646</SrcFile39>
+    <SrcFile0>Drivers\interrupt_manager.src=-1</SrcFile0>
+    <SrcFile1>Drivers\osifcommon\osif.drv=-1</SrcFile1>
+    <SrcFile2>Beans\_SDK\SdkOptions.chg=1331017399</SrcFile2>
+    <SrcFile3>Drivers\Common\EBGNSupport\StringLib.prg=1316652646</SrcFile3>
+    <SrcFile4>Drivers\Common\S32KSettings.inc=1316652645</SrcFile4>
+    <SrcFile5>Drivers\S32K\PinSettings_S32K144_100.prg=-1</SrcFile5>
+    <SrcFile6>Drivers\adc_pal.src=-1</SrcFile6>
+    <SrcFile7>Drivers\Common\HeaderFreescale.C=1316652645</SrcFile7>
+    <SrcFile8>Drivers\Common\RTOSAdaptor.prg=1316652645</SrcFile8>
+    <SrcFile9>Drivers\S32K\S32K144_SDK01\HAL_Port_Bridge.prg=1316652646</SrcFile9>
+    <SrcFile10>Drivers\sw\PinSettings.drv=-1</SrcFile10>
+    <SrcFile11>Drivers\Common\Header.doxy=1345390891</SrcFile11>
+    <SrcFile12>Drivers\Common\GenInitConfigSequence.prg=1316652645</SrcFile12>
+    <SrcFile13>Drivers\S32K\S32K144_SDK01\StaticSdk_S32K.prg=1316652646</SrcFile13>
+    <SrcFile14>Drivers\PinSettings.src=-1</SrcFile14>
+    <SrcFile15>Drivers\Common\PinSettingsAbstract.inc=-1</SrcFile15>
+    <SrcFile16>Drivers\S32K\HAL_Port_Bridge_V2.prg=1316652646</SrcFile16>
+    <SrcFile17>Drivers\S32K\S32K144_SDK01\lpuart_code.drv=-1</SrcFile17>
+    <SrcFile18>Drivers\Common\InitReg32Block.prg=1316652645</SrcFile18>
+    <SrcFile19>Drivers\S32K\StaticSdk_S32K_V4.drv=1316652646</SrcFile19>
+    <SrcFile20>Drivers\S32K\S32_SDK\adc_pal_code.drv=-1</SrcFile20>
+    <SrcFile21>Drivers\Common\ToolChain_Settings.prg=1316652645</SrcFile21>
+    <SrcFile22>Drivers\S32K\S32K144_SDK01\FreeRTOS.drv=-1</SrcFile22>
+    <SrcFile23>Drivers\S32_SDK_DMA_16CH\edma.drv=-1</SrcFile23>
+    <SrcFile24>Drivers\Common\HeaderFreescale.h=1316652645</SrcFile24>
+    <SrcFile25>Drivers\Common\EBGNSupport\TimingLib.prg=1316652646</SrcFile25>
+    <SrcFile26>Drivers\S32K\S32_SDK_S32K\clock_manager.drv=-1</SrcFile26>
+    <SrcFile27>Drivers\FreeRTOS.src=-1</SrcFile27>
+    <SrcFile28>Drivers\S32K\S32_SDK\adc_pal.drv=-1</SrcFile28>
+    <SrcFile29>Drivers\Common\Header.h=1316652645</SrcFile29>
+    <SrcFile30>Drivers\sw\RTOSAdaptor\Common_RTOSAdaptor.prg=1345390891</SrcFile30>
+    <SrcFile31>Drivers\Common\Header.c=1316652645</SrcFile31>
+    <SrcFile32>Drivers\S32K\S32K144_SDK01\_FreeRTOS.drv=-1</SrcFile32>
+    <SrcFile33>Drivers\osif.src=-1</SrcFile33>
+    <SrcFile34>Drivers\sw\RTOSAdaptor\Default_RTOSAdaptor.prg=1345390891</SrcFile34>
+    <SrcFile35>Drivers\Common\WriteBlock_NotRst.prg=1316652645</SrcFile35>
+    <SrcFile36>Drivers\Common\lpuartAbstract.inc=-1</SrcFile36>
+    <SrcFile37>Drivers\S32_SDK_DMA_16CH\edma_code.drv=-1</SrcFile37>
+    <SrcFile38>Drivers\S32K\S32K144_SDK01\interrupt_manager.drv=1316652646</SrcFile38>
+    <SrcFile39>Drivers\S32K\S32K144_SDK01\lpuart.drv=-1</SrcFile39>
+    <SrcFile40>Beans\adc_pal\Drivers\S32K\S32_SDK\adc_pal_global_cfg.drv=1331017399</SrcFile40>
+    <SrcFile41>Drivers\Common\InitRegBlock.prg=1316652645</SrcFile41>
+    <SrcFile42>Drivers\lpuart.src=-1</SrcFile42>
+    <SrcFile43>Drivers\PEx_S32K.src=1316652645</SrcFile43>
+    <SrcFile44>Drivers\Common\Static_SupportSubroutines.prg=1316652645</SrcFile44>
+    <SrcFile45>Drivers\S32K\S32_SDK_S32K\clock_manager_code.drv=-1</SrcFile45>
+    <SrcFile46>Drivers\edma.src=-1</SrcFile46>
+    <SrcFile47>Drivers\Common\S32KAbstract.inc=1316652645</SrcFile47>
+    <SrcFile48>Drivers\Common\HeaderCopyright.inc=1316652645</SrcFile48>
+    <SrcFile49>Drivers\S32K\StaticSdk_S32K.drv=1316652646</SrcFile49>
+    <SrcFile50>Drivers\GlobalConfigFiles.drv=1316652645</SrcFile50>
+    <SrcFile51>Drivers\clock_manager.src=-1</SrcFile51>
+    <SrcFile52>Drivers\Common\Header.end=1316652645</SrcFile52>
   </UsedSrcFiles>
 </GenerationInfo_G_C>
 

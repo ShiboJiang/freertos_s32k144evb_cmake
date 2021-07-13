@@ -20,8 +20,8 @@
 #define PMC_HW_ACCESS_H
 
 #include "device_registers.h"
-#include "stdbool.h"
-#include "stddef.h"
+#include <stdbool.h>
+#include <stddef.h>
 
 /*!
  * @file pmc_hw_access.h

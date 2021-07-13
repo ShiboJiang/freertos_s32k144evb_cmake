@@ -31,7 +31,7 @@
 /*
  * Include the generic headers required for the FreeRTOS port being used.
  */
-#include "stddef.h"
+#include <stddef.h>
 
 /*
  * If stdint.h cannot be located then:
@@ -46,7 +46,7 @@
  *     contains the typedefs required to build FreeRTOS.  Read the instructions
  *     in FreeRTOS/source/stdint.readme for more information.
  */
-#include "stdint.h" /* READ COMMENT ABOVE. */
+#include <stdint.h> /* READ COMMENT ABOVE. */
 
 #ifdef __cplusplus
 extern "C" {
@@ -68,7 +68,7 @@ extern "C" {
 
 /* Required if struct _reent is used. */
 #if ( configUSE_NEWLIB_REENTRANT == 1 )
-	#include "reent.h"
+	#include <reent.h>
 #endif
 /*
  * Check all the required application specific macros have been defined.

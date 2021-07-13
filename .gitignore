@@ -59,3 +59,4 @@ build/
 *.7z
 *.zip
 *.rar
+/Debug_FLASH/

@@ -19,7 +19,7 @@
 #ifndef DEVASSERT_H
 #define DEVASSERT_H
 
-#include "stdbool.h"
+#include <stdbool.h>
 
 /**
  * @page misra_violations MISRA-C:2012 violations

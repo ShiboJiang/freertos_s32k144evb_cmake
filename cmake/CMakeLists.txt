@@ -42,6 +42,9 @@ set(link_file "../../Project_Settings/Linker_Files/S32K1xx_flash.ld")
 
 # User defined in pre-compile
 add_definitions(-D CPU_S32K144HFT0VLLT)
+add_definitions(-D USING_OS_FREERTOS)
+add_definitions(-D S32K)
+add_definitions(-D DEV_ERROR_DETECT)
 
 # system config ,do not change or change it carefully--------------------------
 # set minimum cmake version

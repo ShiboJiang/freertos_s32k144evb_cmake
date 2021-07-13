@@ -19,7 +19,7 @@
 #ifndef STARTUP_H
 #define STARTUP_H
 
-#include "stdint.h"
+#include <stdint.h>
 #include "device_registers.h"
 /**
  * @page misra_violations MISRA-C:2012 violations

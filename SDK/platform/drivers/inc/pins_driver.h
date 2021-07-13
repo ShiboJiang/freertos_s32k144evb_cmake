@@ -19,7 +19,7 @@
 #ifndef PINS_DRIVER_H
 #define PINS_DRIVER_H
 
-#include "stddef.h"
+#include <stddef.h>
 #include "device_registers.h"
 #include "status.h"
 

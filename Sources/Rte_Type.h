@@ -36,4 +36,7 @@ typedef uint8_T uint8;
 // typedef real32_T float32;
 // typedef real_T float64;
 
+#define false 0u
+#define true 1u
+
 #endif

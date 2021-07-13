@@ -7,7 +7,7 @@
 # 
 # -----------------------------------------------------------------------------
 
-# use Ninja as generator
+# use Ninja as generator MinGW Makefiles
 set(CMAKE_GENERATOR "Ninja" CACHE INTERNAL "" FORCE)
 # do not check asm compiler
 set(CMAKE_ASM_COMPILER_ID_RUN TRUE CACHE INTERNAL "" FORCE)

@@ -28,7 +28,7 @@
 #ifndef SYSTEM_S32K144_H_
 #define SYSTEM_S32K144_H_                        /**< Symbol preventing repeated inclusion */
 
-#include "stdint.h"
+#include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
