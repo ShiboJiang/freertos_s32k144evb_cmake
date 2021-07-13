@@ -83,6 +83,8 @@
 
 /* User def includes */
 #include "LedControl.h"
+#include "adc_app.h"
+#include "uart_app.h"
 
 
 /* Priorities at which the tasks are created. */
@@ -298,6 +300,7 @@ unsigned long ulReceivedValue;
     }
 }
 /*-----------------------------------------------------------*/
+volatile uint16 adcMax = 0u;
 
 static void prvSetupHardware( void )
 {
@@ -320,6 +323,41 @@ static void prvSetupHardware( void )
 
     /* Start with LEDs off. */
     PINS_DRV_SetPins(LED_GPIO, (1 << LED1) | (1 << LED2));
+
+    adc_resolution_t resolution = ((extension_adc_s32k1xx_t *)(adc_pal1_InitConfig0.extension))->resolution;
+    status_t status;
+
+    if (resolution == ADC_RESOLUTION_8BIT)
+        adcMax = (uint16_t) (1 << 8);
+    else if (resolution == ADC_RESOLUTION_10BIT)
+        adcMax = (uint16_t) (1 << 10);
+    else
+        adcMax = (uint16_t) (1 << 12);
+
+    /* Initialize LPUART instance
+     *  -   See LPUART component for configuration details
+     * If the initialization failed, trigger an hardware breakpoint
+     */
+    status = LPUART_DRV_Init(INST_LPUART1, &lpuart1_State, &lpuart1_InitConfig0);
+    DEV_ASSERT(status == STATUS_SUCCESS);
+
+    /* Initialize the ADC PAL
+     *  -   See ADC PAL component for the configuration details
+     */
+    for(int i = 0; i< 4; i++)
+    {
+        DEV_ASSERT(adc_pal1_ChansArray00[i] == ADC_CHN) ;
+    }
+    for(int i = 0; i< 5; i++)
+    {
+        DEV_ASSERT(adc_pal1_ChansArray02[i] == ADC_CHN) ;
+    }
+    DEV_ASSERT(adc_pal1_instance.instIdx == ADC_INSTANCE);
+    status = ADC_Init(&adc_pal1_instance, &adc_pal1_InitConfig0);
+    DEV_ASSERT(status == STATUS_SUCCESS);
+
+    /* Send welcome message */
+    print(welcomeStr);
 
     /* Install Button interrupt handler */
     INT_SYS_InstallHandler(BTN_PORT_IRQn, vPort_C_ISRHandler, (isr_t *)NULL);

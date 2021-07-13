@@ -20,9 +20,9 @@
 #include "lpuart1.h"
 #include "clockMan1.h"
 #include "string.h"
+#include "helper_functions.h"
 
 /* Macro Define -------------------------------------------------------------*/
-
 #define welcomeStr "\r\nThis is an example for ADC PAL: it will print the average value of the conversion results in groups of conversions.\
                    \r\nMeasurements are done on ADC0 Input 12\r\n"
 #define part1Str  "\r\n*** Part 1: software triggered conversion group \r\n\r\n"
@@ -30,7 +30,8 @@
 #define headerStr  "ADC avg result: "
 #define exitStr    "\r\nADC PAL example execution finished successfully.\r\n"
 
-
+/* Export Parameters --------------------------------------------------------*/
+extern void print(const char *sourceStr);
 
 
 

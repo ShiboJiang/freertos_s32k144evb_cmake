@@ -23,7 +23,8 @@
         "stdint.h": "c",
         "helper_functions.h": "c",
         "adc_app.h": "c",
-        "uart_app.h": "c"
+        "uart_app.h": "c",
+        "dmacontroller1.h": "c"
     }
 
 }
