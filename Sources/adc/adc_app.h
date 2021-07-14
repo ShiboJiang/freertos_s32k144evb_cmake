@@ -18,12 +18,28 @@
 #include "pin_mux.h"
 #include "adc_pal1.h"
 #include "clockMan1.h"
+#include "uart_app.h"
+#include "FreeRTOS.h"
+#include "task.h"
 
 /* Macro Define -------------------------------------------------------------*/
 #define ADC_INSTANCE    0UL
 #define ADC_CHN         12U
 #define ADC_VREFH       5.0f
 #define ADC_VREFL       0.0f
+
+#define NUM_CONV_GROUP_ITERATIONS       10UL
+#define DELAY_BETWEEN_SW_TRIG_GROUPS    1500UL /* [milliseconds] */
+
+#define TASK_PERIOD_100_MS            ( 100 / portTICK_PERIOD_MS )
+
+/* Import Parameters --------------------------------------------------------*/
+extern QueueHandle_t xVolSig;
+
+/* Export Parameters --------------------------------------------------------*/
+extern uint16 adcMax;
+
+extern void vAdcApp (void *pvParameters);
 
 
 #endif

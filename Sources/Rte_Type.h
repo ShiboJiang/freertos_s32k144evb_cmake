@@ -15,6 +15,9 @@
 
 #include "stdint.h"
 
+/* A block time of zero simply means "don't block". */
+#define mainDONT_BLOCK                        ( 0UL )
+
 /* AUTOSAR Base to Platform types mapping */
 typedef uint8_t boolean_T;
 typedef int16_t int16_T;
@@ -23,7 +26,7 @@ typedef int8_t int8_T;
 typedef uint16_t uint16_T;
 typedef uint32_t uint32_T;
 typedef uint8_t uint8_T;
-// typedef real32_T float32;
+typedef float float32;
 // typedef real_T float64;
 
 typedef boolean_T boolean;

@@ -115,8 +115,6 @@ the queue empty. */
 an interrupt on this port. */
 #define mainGPIO_C_VECTOR                    ( 61 )
 
-/* A block time of zero simply means "don't block". */
-#define mainDONT_BLOCK                        ( 0UL )
 
 /*-----------------------------------------------------------*/
 
@@ -142,6 +140,9 @@ static void prvButtonLEDTimerCallback( TimerHandle_t xTimer );
 /* The queue used by both tasks. */
 static QueueHandle_t xQueue = NULL;
 QueueHandle_t xLedCtrlSig = NULL;
+QueueHandle_t xVolSig = NULL;
+
+uint16 adcMax = 0u;
 
 /* The LED software timer.  This uses prvButtonLEDTimerCallback() as its callback
 function. */
@@ -175,6 +176,9 @@ void rtos_start( void )
     /* Creat led control sig queue. */
     xLedCtrlSig = xQueueCreate(mainQUEUE_LENGTH, sizeof( uint8 ));
 
+    /* voltage signal from adc . */
+    xVolSig = xQueueCreate(mainQUEUE_LENGTH, sizeof( float32 ));
+
     if( xQueue != NULL )
     {
         /* Start the two tasks as described in the comments at the top of this
@@ -185,6 +189,8 @@ void rtos_start( void )
 
         /* User app create */
         xTaskCreate( vLedControl, "LedControl", configMINIMAL_STACK_SIZE, NULL, mainQUEUE_RECEIVE_TASK_PRIORITY, NULL);
+
+        xTaskCreate( vAdcApp, "ADC_Voltage_Calculate", configMINIMAL_STACK_SIZE, NULL, mainQUEUE_SEND_TASK_PRIORITY, NULL);
 
         // xTaskCreate( vCommuReceive, "LedControl", configMINIMAL_STACK_SIZE, NULL, mainQUEUE_RECEIVE_TASK_PRIORITY, NULL);
 
@@ -300,7 +306,6 @@ unsigned long ulReceivedValue;
     }
 }
 /*-----------------------------------------------------------*/
-volatile uint16 adcMax = 0u;
 
 static void prvSetupHardware( void )
 {
