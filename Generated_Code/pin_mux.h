@@ -7,7 +7,7 @@
 **     Version     : Component 1.2.0, Driver 1.4, CPU db: 3.00.000
 **     Repository  : SDK_S32K1xx_15
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-07-15, 08:41, # CodeGen: 9
+**     Date/Time   : 2021-07-15, 15:05, # CodeGen: 19
 **     Abstract    :
 **
 **     Settings    :
@@ -49,7 +49,7 @@
 **                  Channel 9                              : <Automatic>
 **                  Channel 10                             : <Automatic>
 **                  Channel 11                             : <Automatic>
-**                  Channel 12                             : <Automatic>
+**                  Channel 12                             : PTA15
 **                  Channel 13                             : <Automatic>
 **                  Channel 14                             : <Automatic>
 **                  Channel 15                             : <Automatic>
@@ -58,8 +58,8 @@
 **              Peripheral Type CAN                        : 
 **                Custom name                              : CAN0
 **                CAN0                                     : 
-**                  Receiver Input                         : PTE4
-**                  Transmitter Output                     : PTE5
+**                  Receiver Input                         : <Automatic>
+**                  Transmitter Output                     : <Automatic>
 **                Custom name                              : CAN1
 **                CAN1                                     : 
 **                  Receiver Input                         : <Automatic>
@@ -286,14 +286,14 @@
 **                  Direction                              : <Automatic>
 **                Custom name                              : PTC
 **                PTC                                      : 
-**                  Pin 0                                  : PTC0
-**                  Direction                              : Output
-**                  Pin 1                                  : PTC1
-**                  Direction                              : Output
-**                  Pin 2                                  : PTC2
-**                  Direction                              : Output
-**                  Pin 3                                  : PTC3
-**                  Direction                              : Output
+**                  Pin 0                                  : <Automatic>
+**                  Direction                              : <Automatic>
+**                  Pin 1                                  : <Automatic>
+**                  Direction                              : <Automatic>
+**                  Pin 2                                  : <Automatic>
+**                  Direction                              : <Automatic>
+**                  Pin 3                                  : <Automatic>
+**                  Direction                              : <Automatic>
 **                  Pin 4(JTAG)                            : <Automatic>
 **                  Direction                              : <Automatic>
 **                  Pin 5(JTAG)                            : <Automatic>
@@ -312,8 +312,8 @@
 **                  Direction                              : <Automatic>
 **                  Pin 12                                 : <Automatic>
 **                  Direction                              : <Automatic>
-**                  Pin 13                                 : PTC13
-**                  Direction                              : Input
+**                  Pin 13                                 : <Automatic>
+**                  Direction                              : <Automatic>
 **                  Pin 14                                 : <Automatic>
 **                  Direction                              : <Automatic>
 **                  Pin 15                                 : <Automatic>
@@ -481,9 +481,9 @@
 **                LPUART1                                  : 
 **                  Clear to Send                          : <Automatic>
 **                  Request to Send                        : <Automatic>
-**                  Receive Data                           : <Automatic>
-**                  Transmit Data                          : <Automatic>
-**                  Direction                              : <Automatic>
+**                  Receive Data                           : PTC6
+**                  Transmit Data                          : PTC7
+**                  Direction                              : Output
 **                Custom name                              : LPUART2
 **                LPUART2                                  : 
 **                  Clear to Send                          : <Automatic>
@@ -750,7 +750,7 @@
 **                Custom name, Signal name                 : PTD16
 **                Interrupt Status Field                   : <Automatic>
 **                Interrupt Configuration Field            : <Automatic>
-**                Pin Mux Field                            : Alternative 1 (GPIO).
+**                Pin Mux Field                            : <Automatic>
 **                Lock Field                               : <Automatic>
 **                Drive Strength Field                     : <Automatic>
 **                Pull Enable Field                        : <Automatic>
@@ -761,7 +761,7 @@
 **                Custom name, Signal name                 : PTD15
 **                Interrupt Status Field                   : <Automatic>
 **                Interrupt Configuration Field            : <Automatic>
-**                Pin Mux Field                            : Alternative 1 (GPIO).
+**                Pin Mux Field                            : <Automatic>
 **                Lock Field                               : <Automatic>
 **                Drive Strength Field                     : <Automatic>
 **                Pull Enable Field                        : <Automatic>
@@ -1018,12 +1018,12 @@
 **                Digital Filter Field                     : <Automatic>
 **              Pin 49: PTC13                              : 
 **                Custom name, Signal name                 : PTC13
-**                Interrupt Status Field                   : Clear flag
-**                Interrupt Configuration Field            : ISF flag and Interrupt on rising-edge.
+**                Interrupt Status Field                   : <Automatic>
+**                Interrupt Configuration Field            : <Automatic>
 **                Pin Mux Field                            : <Automatic>
 **                Lock Field                               : <Automatic>
-**                Pull Enable Field                        : Disabled
-**                Pull Select Field                        : Pull Up
+**                Pull Enable Field                        : <Automatic>
+**                Pull Select Field                        : <Automatic>
 **                Initial Value Field                      : <Automatic>
 **                Digital Filter Field                     : <Automatic>
 **              Pin 50: PTC12                              : 
@@ -1583,7 +1583,7 @@
 
 
 /*! @brief User number of configured pins */
-#define NUM_OF_CONFIGURED_PINS 9
+#define NUM_OF_CONFIGURED_PINS 2
 
 /*! @brief User configuration structure */
 extern pin_settings_config_t g_pin_mux_InitConfigArr[NUM_OF_CONFIGURED_PINS];

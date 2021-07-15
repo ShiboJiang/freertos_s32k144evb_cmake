@@ -152,8 +152,12 @@ static uint8 debug_test = 0u;
 
 void boardSetup(void)
 {
+    /* Initialize pins
+     *  -   See PinSettings component for more info
+     */
+    PINS_DRV_Init(NUM_OF_CONFIGURED_PINS, g_pin_mux_InitConfigArr);
     /* Configure ports */
-    PINS_DRV_SetMuxModeSel(LED_PORT, LED1, PORT_MUX_AS_GPIO);
+    PINS_DRV_SetMuxModeSel(LED_PORT, LED1, PORT_MUX_AS_GPIO); 
     PINS_DRV_SetMuxModeSel(LED_PORT, LED2, PORT_MUX_AS_GPIO);
     PINS_DRV_SetMuxModeSel(BTN_PORT, BTN_PIN, PORT_MUX_AS_GPIO);
 #ifdef EVB
@@ -390,8 +394,6 @@ static void prvSetupHardware(void)
     /* Start the selected SW triggered group of conversions */
     status = ADC_StartGroupConversion(&adc_pal1_instance, selectedGroupIndex);
     DEV_ASSERT(status == STATUS_SUCCESS);
-    
-    print(welcomeStr);
 
     /* Install Button interrupt handler */
     INT_SYS_InstallHandler(BTN_PORT_IRQn, vPort_C_ISRHandler, (isr_t *)NULL);
@@ -401,6 +403,8 @@ static void prvSetupHardware(void)
     /* The interrupt calls an interrupt safe API function - so its priority must
     be equal to or lower than configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY. */
     INT_SYS_SetPriority(BTN_PORT_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY);
+
+    print(initOKStr);
 }
 /*-----------------------------------------------------------*/
 

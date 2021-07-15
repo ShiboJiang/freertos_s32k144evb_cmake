@@ -23,6 +23,7 @@
 #include "helper_functions.h"
 
 /* Macro Define -------------------------------------------------------------*/
+#define initOKStr "\r\n Initial OK! \r\n"
 #define welcomeStr "\r\nThis is an example for ADC PAL: it will print the average value of the conversion results in groups of conversions.\
                    \r\nMeasurements are done on ADC0 Input 12\r\n"
 #define part1Str  "\r\n*** Part 1: software triggered conversion group \r\n\r\n"

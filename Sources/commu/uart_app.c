@@ -20,13 +20,14 @@
 void print(const char *sourceStr)
 {
     uint32_t bytesRemaining;
+    status_t transSts;
 
     /* Send data via LPUART */
     LPUART_DRV_SendData(INST_LPUART1, (uint8_t *) sourceStr, strlen(sourceStr));
     /* Wait for transmission to be successful */
-    while (LPUART_DRV_GetTransmitStatus(INST_LPUART1, &bytesRemaining)
-            != STATUS_SUCCESS)
+    transSts = LPUART_DRV_GetTransmitStatus(INST_LPUART1, &bytesRemaining);
+    while (transSts != STATUS_SUCCESS)
     {
-        /* Do nothing */
+        transSts = LPUART_DRV_GetTransmitStatus(INST_LPUART1, &bytesRemaining);
     }
 }

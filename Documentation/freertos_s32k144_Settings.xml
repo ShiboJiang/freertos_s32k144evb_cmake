@@ -83,23 +83,6 @@
       <EmptySection_DummyValue />
     </Events>
   </Bean>
-  <Bean name="pin_mux" type="PinSettings">
-    <Enabled v="Y" />
-    <Properties>
-      <Component_name v="pin_mux" />
-      <PinSettings_IP_Block v="PinSettings" />
-      <Processor v="S32K144_100" />
-      <group name="Settings">
-        <EmptySection_DummyValue />
-      </group>
-    </Properties>
-    <Methods>
-      <EmptySection_DummyValue />
-    </Methods>
-    <Events>
-      <EmptySection_DummyValue />
-    </Events>
-  </Bean>
   <Bean name="intMan1" type="interrupt_manager">
     <Enabled v="Y" />
     <Properties>
@@ -187,6 +170,23 @@
       <Component_name v="lpTmr1" />
       <Device v="LPTMR0" />
       <Component_version v="S32K144_SDK01" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="pin_mux" type="PinSettings">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="pin_mux" />
+      <PinSettings_IP_Block v="PinSettings" />
+      <Processor v="S32K144_100" />
+      <group name="Settings">
+        <EmptySection_DummyValue />
+      </group>
     </Properties>
     <Methods>
       <EmptySection_DummyValue />

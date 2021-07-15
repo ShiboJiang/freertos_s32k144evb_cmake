@@ -45,6 +45,11 @@
         <Line>SDK\platform\drivers\src\trgmux\trgmux_hw_access.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\trgmux\trgmux_hw_access.c</Line>
         <Line>SDK\platform\drivers\src\trgmux\trgmux_hw_access.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\trgmux\trgmux_hw_access.h</Line>
         <Line>SDK\platform\drivers\inc\trgmux_driver.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\inc\trgmux_driver.h</Line>
+        <Line>SDK\platform\drivers\src\pins\pins_driver.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\pins\pins_driver.c</Line>
+        <Line>SDK\platform\drivers\src\pins\pins_gpio_hw_access.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\pins\pins_gpio_hw_access.h</Line>
+        <Line>SDK\platform\drivers\inc\pins_driver.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\inc\pins_driver.h</Line>
+        <Line>SDK\platform\drivers\src\pins\pins_port_hw_access.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\pins\pins_port_hw_access.c</Line>
+        <Line>SDK\platform\drivers\src\pins\pins_port_hw_access.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\pins\pins_port_hw_access.h</Line>
         <Line>SDK\platform\drivers\src\lptmr\lptmr_driver.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\lptmr\lptmr_driver.c</Line>
         <Line>SDK\platform\drivers\src\lptmr\lptmr_hw_access.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\lptmr\lptmr_hw_access.c</Line>
         <Line>SDK\platform\drivers\src\lptmr\lptmr_hw_access.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\lptmr\lptmr_hw_access.h</Line>
@@ -95,11 +100,6 @@
         <Line>SDK\rtos\FreeRTOS_S32K\Source\portable\MemMang\heap_2.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\rtos\FreeRTOS_S32K\Source\portable\MemMang\heap_2.c</Line>
         <Line>SDK\rtos\FreeRTOS_S32K\Source\portable\GCC\ARM_CM4F\port.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\rtos\FreeRTOS_S32K\Source\portable\GCC\ARM_CM4F\port.c</Line>
         <Line>SDK\rtos\FreeRTOS_S32K\Source\portable\GCC\ARM_CM4F\portmacro.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\rtos\FreeRTOS_S32K\Source\portable\GCC\ARM_CM4F\portmacro.h</Line>
-        <Line>SDK\platform\drivers\src\pins\pins_driver.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\pins\pins_driver.c</Line>
-        <Line>SDK\platform\drivers\src\pins\pins_gpio_hw_access.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\pins\pins_gpio_hw_access.h</Line>
-        <Line>SDK\platform\drivers\inc\pins_driver.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\inc\pins_driver.h</Line>
-        <Line>SDK\platform\drivers\src\pins\pins_port_hw_access.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\pins\pins_port_hw_access.c</Line>
-        <Line>SDK\platform\drivers\src\pins\pins_port_hw_access.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\pins\pins_port_hw_access.h</Line>
         <Line>SDK\platform\drivers\src\clock\S32K1xx\clock_S32K1xx.c=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\clock\S32K1xx\clock_S32K1xx.c</Line>
         <Line>SDK\platform\drivers\src\clock\S32K1xx\clock_S32K1xx.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\clock\S32K1xx\clock_S32K1xx.h</Line>
         <Line>SDK\platform\drivers\src\clock\S32K1xx\pcc_hw_access.h=C:\NXP\S32DS_ARM_v2.2\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\platform\drivers\src\clock\S32K1xx\pcc_hw_access.h</Line>
@@ -135,17 +135,17 @@
       <GenExternModules lines_count="0" />
       <GenBeanModules lines_count="7">
         <Line>clockMan1</Line>
-        <Line>pin_mux</Line>
         <Line>FreeRTOS</Line>
         <Line>adc_pal1</Line>
         <Line>lpuart1</Line>
         <Line>dmaController1</Line>
         <Line>lpTmr1</Line>
+        <Line>pin_mux</Line>
       </GenBeanModules>
     </GenFiles>
     <SignalListFile />
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>33</ProjectModificationStamp>
+    <ProjectModificationStamp>37</ProjectModificationStamp>
   </Options>
   <CpuID_23>
     <Generated>true</Generated>
@@ -153,7 +153,7 @@
     <GenComponentVersion>01.197</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1391412516</HeaderAge>
+    <HeaderAge>1391425709</HeaderAge>
     <CodeAge>1391412516</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>3</GenNumMethods>
@@ -198,8 +198,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1391412707</HeaderAge>
-    <CodeAge>1391412707</CodeAge>
+    <HeaderAge>1391424211</HeaderAge>
+    <CodeAge>1391424211</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>6</GenNumMethods>
     <CLOCK_DRV_Init>true</CLOCK_DRV_Init>
@@ -224,53 +224,6 @@
     <ExtraFile7>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\clock\S32K1xx\clock_S32K1xx.h</ExtraFile7>
     <ExtraFile8>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\clock\S32K1xx\clock_S32K1xx.c</ExtraFile8>
   </ComponentID_15>
-  <ComponentID_13>
-    <Generated>true</Generated>
-    <GenCompName>pin_mux</GenCompName>
-    <GenComponentVersion>1.2.0</GenComponentVersion>
-    <GenDriverVersion>1.4</GenDriverVersion>
-    <GenEventModule />
-    <HeaderAge>1391412516</HeaderAge>
-    <CodeAge>1391412516</CodeAge>
-    <AsemblAge>-1</AsemblAge>
-    <GenNumMethods>25</GenNumMethods>
-    <PINS_DRV_Init>true</PINS_DRV_Init>
-    <PINS_DRV_SetPullSel>true</PINS_DRV_SetPullSel>
-    <PINS_DRV_SetMuxModeSel>true</PINS_DRV_SetMuxModeSel>
-    <PINS_DRV_SetPinIntSel>true</PINS_DRV_SetPinIntSel>
-    <PINS_DRV_GetPinIntSel>true</PINS_DRV_GetPinIntSel>
-    <PINS_DRV_ClearPinIntFlagCmd>true</PINS_DRV_ClearPinIntFlagCmd>
-    <PINS_DRV_EnableDigitalFilter>true</PINS_DRV_EnableDigitalFilter>
-    <PINS_DRV_DisableDigitalFilter>true</PINS_DRV_DisableDigitalFilter>
-    <PINS_DRV_ConfigDigitalFilter>true</PINS_DRV_ConfigDigitalFilter>
-    <PINS_DRV_GetPortIntFlag>true</PINS_DRV_GetPortIntFlag>
-    <PINS_DRV_ClearPortIntFlagCmd>true</PINS_DRV_ClearPortIntFlagCmd>
-    <PINS_DRV_SetGlobalPinControl>true</PINS_DRV_SetGlobalPinControl>
-    <PINS_DRV_SetGlobalIntControl>true</PINS_DRV_SetGlobalIntControl>
-    <PINS_DRV_GetPinsDirection>true</PINS_DRV_GetPinsDirection>
-    <PINS_DRV_SetPinDirection>true</PINS_DRV_SetPinDirection>
-    <PINS_DRV_SetPinsDirection>true</PINS_DRV_SetPinsDirection>
-    <PINS_DRV_SetPortInputDisable>true</PINS_DRV_SetPortInputDisable>
-    <PINS_DRV_GetPortInputDisable>true</PINS_DRV_GetPortInputDisable>
-    <PINS_DRV_WritePin>true</PINS_DRV_WritePin>
-    <PINS_DRV_WritePins>true</PINS_DRV_WritePins>
-    <PINS_DRV_GetPinsOutput>true</PINS_DRV_GetPinsOutput>
-    <PINS_DRV_SetPins>true</PINS_DRV_SetPins>
-    <PINS_DRV_ClearPins>true</PINS_DRV_ClearPins>
-    <PINS_DRV_TogglePins>true</PINS_DRV_TogglePins>
-    <PINS_DRV_ReadPins>true</PINS_DRV_ReadPins>
-    <GenNumEvents>0</GenNumEvents>
-    <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
-    <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
-    <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
-    <GenMethodPos>0</GenMethodPos>
-    <GenExtraFilesCount>5</GenExtraFilesCount>
-    <ExtraFile0>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\pins\pins_port_hw_access.h</ExtraFile0>
-    <ExtraFile1>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\pins\pins_port_hw_access.c</ExtraFile1>
-    <ExtraFile2>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\inc\pins_driver.h</ExtraFile2>
-    <ExtraFile3>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\pins\pins_gpio_hw_access.h</ExtraFile3>
-    <ExtraFile4>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\pins\pins_driver.c</ExtraFile4>
-  </ComponentID_13>
   <ComponentID_21>
     <Generated>true</Generated>
     <GenCompName>intMan1</GenCompName>
@@ -663,6 +616,53 @@
     <ExtraFile2>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\lptmr\lptmr_hw_access.c</ExtraFile2>
     <ExtraFile3>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\lptmr\lptmr_driver.c</ExtraFile3>
   </ComponentID_34>
+  <ComponentID_35>
+    <Generated>true</Generated>
+    <GenCompName>pin_mux</GenCompName>
+    <GenComponentVersion>1.2.0</GenComponentVersion>
+    <GenDriverVersion>1.4</GenDriverVersion>
+    <GenEventModule />
+    <HeaderAge>1391425709</HeaderAge>
+    <CodeAge>1391425709</CodeAge>
+    <AsemblAge>-1</AsemblAge>
+    <GenNumMethods>25</GenNumMethods>
+    <PINS_DRV_Init>true</PINS_DRV_Init>
+    <PINS_DRV_SetPullSel>true</PINS_DRV_SetPullSel>
+    <PINS_DRV_SetMuxModeSel>true</PINS_DRV_SetMuxModeSel>
+    <PINS_DRV_SetPinIntSel>true</PINS_DRV_SetPinIntSel>
+    <PINS_DRV_GetPinIntSel>true</PINS_DRV_GetPinIntSel>
+    <PINS_DRV_ClearPinIntFlagCmd>true</PINS_DRV_ClearPinIntFlagCmd>
+    <PINS_DRV_EnableDigitalFilter>true</PINS_DRV_EnableDigitalFilter>
+    <PINS_DRV_DisableDigitalFilter>true</PINS_DRV_DisableDigitalFilter>
+    <PINS_DRV_ConfigDigitalFilter>true</PINS_DRV_ConfigDigitalFilter>
+    <PINS_DRV_GetPortIntFlag>true</PINS_DRV_GetPortIntFlag>
+    <PINS_DRV_ClearPortIntFlagCmd>true</PINS_DRV_ClearPortIntFlagCmd>
+    <PINS_DRV_SetGlobalPinControl>true</PINS_DRV_SetGlobalPinControl>
+    <PINS_DRV_SetGlobalIntControl>true</PINS_DRV_SetGlobalIntControl>
+    <PINS_DRV_GetPinsDirection>true</PINS_DRV_GetPinsDirection>
+    <PINS_DRV_SetPinDirection>true</PINS_DRV_SetPinDirection>
+    <PINS_DRV_SetPinsDirection>true</PINS_DRV_SetPinsDirection>
+    <PINS_DRV_SetPortInputDisable>true</PINS_DRV_SetPortInputDisable>
+    <PINS_DRV_GetPortInputDisable>true</PINS_DRV_GetPortInputDisable>
+    <PINS_DRV_WritePin>true</PINS_DRV_WritePin>
+    <PINS_DRV_WritePins>true</PINS_DRV_WritePins>
+    <PINS_DRV_GetPinsOutput>true</PINS_DRV_GetPinsOutput>
+    <PINS_DRV_SetPins>true</PINS_DRV_SetPins>
+    <PINS_DRV_ClearPins>true</PINS_DRV_ClearPins>
+    <PINS_DRV_TogglePins>true</PINS_DRV_TogglePins>
+    <PINS_DRV_ReadPins>true</PINS_DRV_ReadPins>
+    <GenNumEvents>0</GenNumEvents>
+    <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
+    <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
+    <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
+    <GenMethodPos>0</GenMethodPos>
+    <GenExtraFilesCount>5</GenExtraFilesCount>
+    <ExtraFile0>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\pins\pins_port_hw_access.h</ExtraFile0>
+    <ExtraFile1>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\pins\pins_port_hw_access.c</ExtraFile1>
+    <ExtraFile2>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\inc\pins_driver.h</ExtraFile2>
+    <ExtraFile3>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\pins\pins_gpio_hw_access.h</ExtraFile3>
+    <ExtraFile4>C:\D\git\freertos_s32k144evb_cmake\SDK\platform\drivers\src\pins\pins_driver.c</ExtraFile4>
+  </ComponentID_35>
   <UsedSrcFiles>
     <SrcFile0>Drivers\interrupt_manager.src=-1</SrcFile0>
     <SrcFile1>Drivers\osifcommon\osif.drv=-1</SrcFile1>
@@ -681,8 +681,8 @@
     <SrcFile14>Drivers\PinSettings.src=-1</SrcFile14>
     <SrcFile15>Drivers\Common\PinSettingsAbstract.inc=-1</SrcFile15>
     <SrcFile16>Drivers\S32K\S32K144_SDK01\lptmr.drv=-1</SrcFile16>
-    <SrcFile17>Drivers\S32K\HAL_Port_Bridge_V2.prg=1316652646</SrcFile17>
-    <SrcFile18>Drivers\S32K\S32K144_SDK01\lpuart_code.drv=-1</SrcFile18>
+    <SrcFile17>Drivers\S32K\S32K144_SDK01\lpuart_code.drv=-1</SrcFile17>
+    <SrcFile18>Drivers\S32K\HAL_Port_Bridge_V2.prg=1316652646</SrcFile18>
     <SrcFile19>Drivers\Common\InitReg32Block.prg=1316652645</SrcFile19>
     <SrcFile20>Drivers\S32K\StaticSdk_S32K_V4.drv=1316652646</SrcFile20>
     <SrcFile21>Drivers\S32K\S32_SDK\adc_pal_code.drv=-1</SrcFile21>

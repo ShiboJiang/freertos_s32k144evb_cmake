@@ -7,7 +7,7 @@
 **     Version     : Component 01.197, Driver 01.00, CPU db: 3.00.000
 **     Datasheet   : S32K14XRM Rev. 2, 02/2017
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-07-15, 08:41, # CodeGen: 9
+**     Date/Time   : 2021-07-15, 15:05, # CodeGen: 19
 **     Abstract    :
 **
 **     Settings    :
@@ -68,12 +68,12 @@
 
 /* Including needed modules to compile this module/procedure */
 #include "clockMan1.h"
-#include "pin_mux.h"
 #include "FreeRTOS.h"
 #include "adc_pal1.h"
 #include "lpuart1.h"
 #include "dmaController1.h"
 #include "lpTmr1.h"
+#include "pin_mux.h"
 
 #ifdef __cplusplus
 extern "C" {

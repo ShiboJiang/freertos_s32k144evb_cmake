@@ -57,7 +57,7 @@ void adc_pal1_callback02(const adc_callback_info_t * const callbackInfo, void * 
 
 void vAdcApp (void *pvParameters)
 {
-    status_t status;
+    // status_t status;
     uint16 resultStartOffset;
     uint32 sum, avg;
     float32 avgVolts;
