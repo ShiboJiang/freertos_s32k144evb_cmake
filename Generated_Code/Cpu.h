@@ -7,7 +7,7 @@
 **     Version     : Component 01.197, Driver 01.00, CPU db: 3.00.000
 **     Datasheet   : S32K14XRM Rev. 2, 02/2017
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-07-13, 13:47, # CodeGen: 4
+**     Date/Time   : 2021-07-15, 08:41, # CodeGen: 9
 **     Abstract    :
 **
 **     Settings    :
@@ -63,6 +63,7 @@
 #include "adc_pal.h"
 #include "edma_driver.h"
 #include "lpuart_driver.h"
+#include "lptmr_driver.h"
 #include "system_S32K144.h"
 
 /* Including needed modules to compile this module/procedure */
@@ -72,6 +73,7 @@
 #include "adc_pal1.h"
 #include "lpuart1.h"
 #include "dmaController1.h"
+#include "lpTmr1.h"
 
 #ifdef __cplusplus
 extern "C" {

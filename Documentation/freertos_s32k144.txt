@@ -425,6 +425,25 @@ Module "dmaController1" (component edma)
    - dmaController1_EDMA_DRV_ConfigureInterrupt -Disables/Enables the channel interrupt requests.
    - dmaController1_EDMA_DRV_TriggerSwRequest -Triggers a sw request for the current channel.
 
+Module "lpTmr1"    (component lptmr)
+   - lpTmr1_LPTMR_DRV_InitConfigStruct -Initialize configuration structure.
+   - lpTmr1_LPTMR_DRV_Init -Initializes the LPTMR as Timer or Pulse Counter
+   - lpTmr1_LPTMR_DRV_SetConfig -Configure a LPTMR instance.
+   - lpTmr1_LPTMR_DRV_GetConfig -Get the current configuration of a LPTMR instance.
+   - lpTmr1_LPTMR_DRV_Deinit -Deinitializes a LPTMR instance.
+   - lpTmr1_LPTMR_DRV_SetCompareValueByCount -Change the Compare Value in counter tick units.
+   - lpTmr1_LPTMR_DRV_GetCompareValueByCount -Get the Compare Value in counter tick units.
+   - lpTmr1_LPTMR_DRV_SetCompareValueByUs -Set the compare value for Timer Mode in microseconds.
+   - lpTmr1_LPTMR_DRV_GetCompareValueByUs -Get the Compare Value in microseconds.
+   - lpTmr1_LPTMR_DRV_GetCompareFlag -Get the current state of the Compare Flag (Interrupt Pending)
+   - lpTmr1_LPTMR_DRV_ClearCompareFlag -Clear the Compare/Interrupt Pending Flag.
+   - lpTmr1_LPTMR_DRV_IsRunning -Get the run state of a LPTMR instance.
+   - lpTmr1_LPTMR_DRV_SetInterrupt -Enable/disable the LPTMR interrupt
+   - lpTmr1_LPTMR_DRV_GetCounterValueByCount -Get the current counter value in counter tick units.
+   - lpTmr1_LPTMR_DRV_StartCounter -Enable the LPTMR / Start the counter.
+   - lpTmr1_LPTMR_DRV_StopCounter -Disable the LPTMR / Stop the counter.
+   - lpTmr1_LPTMR_DRV_SetPinConfiguration -Set the Input Pin configuration for Pulse Counter mode.
+
 Module "Cpu"       (component S32K144_100)
    - Cpu_SystemInit -This function disables the watchdog, enables FPU and the power mode protection. SystemInit is called from 
                 startup_device file.

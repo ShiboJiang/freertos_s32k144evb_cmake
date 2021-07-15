@@ -32,12 +32,15 @@
 #define DELAY_BETWEEN_SW_TRIG_GROUPS    1500UL /* [milliseconds] */
 
 #define TASK_PERIOD_100_MS            ( 100 / portTICK_PERIOD_MS )
+#define TASK_PERIOD_1000_MS            ( 1000 / portTICK_PERIOD_MS )
+#define TASK_ADC_STACK_SIZE            ((uint16) 500)
 
 /* Import Parameters --------------------------------------------------------*/
 extern QueueHandle_t xVolSig;
 
 /* Export Parameters --------------------------------------------------------*/
 extern uint16 adcMax;
+extern uint8 selectedGroupIndex;
 
 extern void vAdcApp (void *pvParameters);
 

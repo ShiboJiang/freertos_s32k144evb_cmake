@@ -3,7 +3,7 @@
   <Header>
     <Name>freertos_s32k144</Name>
     <SavedBy>B55288</SavedBy>
-    <ModificationStamp>27</ModificationStamp>
+    <ModificationStamp>33</ModificationStamp>
     <Date>2015-10-14</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.12.2.RT7_b1743-0713</PEversion>
@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>34</ProjectCompNumb>
+    <ProjectCompNumb>35</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -875,7 +875,7 @@
         <ItemSymbol>PeripheralClocksCount0</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>12</Value>
+        <Value>15</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>PeripheralClocksGrp0</ItemSymbol>
@@ -1975,8 +1975,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeClockEnaDis</TypeSpecNameState>
-        <Index>0</Index>
-        <EnumSymbVal>Enabled</EnumSymbVal>
+        <Index>1</Index>
+        <EnumSymbVal>Disabled</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>Peripheral19_CLkEnable0</ItemSymbol>
@@ -2217,8 +2217,8 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>Peripheral12_CLOCK_NAME0</ItemSymbol>
@@ -2268,8 +2268,8 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>Peripheral10_CLOCK_NAME0</ItemSymbol>
@@ -2574,8 +2574,8 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>Peripheral18_CLOCK_NAME0</ItemSymbol>
@@ -4665,11 +4665,11 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>PDB_0_CLOCK_GATE_0</ItemSymbol>
-        <Value>'off'</Value>
+        <Value>'on'</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>PDB_1_CLOCK_GATE_0</ItemSymbol>
-        <Value>'off'</Value>
+        <Value>'on'</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>PORT_0_CLOCK_GATE_0</ItemSymbol>
@@ -4693,7 +4693,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>RTC_0_CLOCK_GATE_0</ItemSymbol>
-        <Value>'off'</Value>
+        <Value>'on'</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>PeripheralFunctionalClocksGrp0</ItemSymbol>
@@ -4862,7 +4862,7 @@
         <ItemSymbol>ProjectComponentsCount</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>8</Value>
+        <Value>9</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>PeripheralMaxIdValue</ItemSymbol>
@@ -4874,7 +4874,7 @@
         <ItemSymbol>ProjectComponentsCountChanged</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>1</Value>
+        <Value>0</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>ModuleName_ADC</ItemSymbol>
@@ -5018,7 +5018,7 @@
         <ItemSymbol>ModuleName_LPTMR</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>0</Value>
+        <Value>1</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>ModuleName_LPUART</ItemSymbol>
@@ -31522,8 +31522,8 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>1</Index>
-        <Value>false</Value>
+        <Index>0</Index>
+        <Value>true</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>adcPalConvGroup_Callback0_0</ItemSymbol>
@@ -32832,8 +32832,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>type_edma_channel_request_s32k144</TypeSpecNameState>
-        <Index>0</Index>
-        <EnumSymbVal>EDMA_REQ_DISABLED</EnumSymbVal>
+        <Index>1</Index>
+        <EnumSymbVal>EDMA_REQ_LPUART0_RX</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CallbackName0</ItemSymbol>
@@ -33177,6 +33177,368 @@
         <LastSelection>true</LastSelection>
         <LastUserSel>always</LastUserSel>
         <UsrMethodName>EDMA_DRV_TriggerSwRequest</UsrMethodName>
+      </ItemState>
+    </Methods>
+    <Events />
+  </Bean>
+  <Bean>
+    <Repository>file:/${ProcessorExpert_loc}/../../S32DS/software/S32SDK_S32K1xx_RTM_3.0.0/tools/pex/Repositories/SDK_S32K1xx_15_Repository</Repository>
+    <ComponentUUID>com.freescale.processorexpert.ksdk.lptmr</ComponentUUID>
+    <BeanType>lptmr</BeanType>
+    <Name>lpTmr1</Name>
+    <CompNumb>34</CompNumb>
+    <CompEnabled>true</CompEnabled>
+    <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
+    <IconName>CLOCKS_LDD</IconName>
+    <UserFolderName />
+    <Comment lines_count="0" />
+    <Template />
+    <BeanVersion>SDK_S32K1xx_15</BeanVersion>
+    <LightErrorsIgnored>false</LightErrorsIgnored>
+    <Properties>
+      <ItemState>
+        <ItemSymbol>DeviceName</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>lpTmr1</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PeriphDevice</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>LPTMR0</Value>
+        <SharedPrphMode>false</SharedPrphMode>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CompVersion</ItemSymbol>
+        <Value>S32K144_SDK01</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>VersionSpecificItem</ItemSymbol>
+        <ListItemCount>1</ListItemCount>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Settings</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PropertiesItem</ItemSymbol>
+        <ListItemCount>1</ListItemCount>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MainConfigurationsGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Index>0</Index>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ClockConfig</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>Clock configuration 0</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrGeneralCfg</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <ListItemCount>1</ListItemCount>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrGeneralCfg_0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrGeneralCfg_NAME0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>lpTmr1_config0</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrGeneralCfg_TYPE0</ItemSymbol>
+        <Value>lptmr_config_t</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrGeneralCfg_READONLY0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrGeneralCfg_WorkMode0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <EnumSymbVal>LPTMR_WORKMODE_TIMER</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrGeneralCfg_dmaRequest0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <Value>false</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrGeneralCfg_interruptEnable0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <Value>false</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrGeneralCfg_FreeRun0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <Value>false</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrGeneralCfg_compareValue0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>1500000</Value>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrGeneralCfg_counterUnits0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <EnumSymbVal>LPTMR_COUNTER_UNITS_MICROSECONDS</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrGeneralCfg_InputClock0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <EnumSymbVal>LPTMR_CLOCKSOURCE_SIRCDIV2</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrGeneralCfg_Prescaler0</ItemSymbol>
+        <ReadOnly>true</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <EnumSymbVal>LPTMR_PRESCALE_2</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrGeneralCfg_BypassPrescaler0</ItemSymbol>
+        <ReadOnly>true</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <Value>false</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrGeneralCfg_PinSelect0</ItemSymbol>
+        <ReadOnly>true</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <EnumSymbVal>LPTMR_PINSELECT_TRGMUX</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrGeneralCfg_PinPolarity0</ItemSymbol>
+        <ReadOnly>true</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <EnumSymbVal>LPTMR_PINPOLARITY_RISING</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LinkItem</ItemSymbol>
+        <ListItemCount>1</ListItemCount>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LinkGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Link1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>clockMan1</Value>
+      </ItemState>
+    </Properties>
+    <Methods>
+      <ItemState>
+        <ItemSymbol>SdkSpecificMethods</ItemSymbol>
+        <ListItemCount>1</ListItemCount>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>lptmrgroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_InitConfigStruct</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_InitConfigStruct</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_Init</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_Init</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_SetConfig</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_SetConfig</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_GetConfig</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_GetConfig</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_Deinit</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_Deinit</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_SetCompareValueByCount</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_SetCompareValueByCount</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_GetCompareValueByCount</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_GetCompareValueByCount</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_SetCompareValueByUs</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_SetCompareValueByUs</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_GetCompareValueByUs</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_GetCompareValueByUs</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_GetCompareFlag</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_GetCompareFlag</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_ClearCompareFlag</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_ClearCompareFlag</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_IsRunning</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_IsRunning</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_SetInterrupt</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_SetInterrupt</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_GetCounterValueByCount</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_GetCounterValueByCount</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_StartCounter</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_StartCounter</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_StopCounter</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_StopCounter</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LPTMR_DRV_SetPinConfiguration</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>LPTMR_DRV_SetPinConfiguration</UsrMethodName>
       </ItemState>
     </Methods>
     <Events />

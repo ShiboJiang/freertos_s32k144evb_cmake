@@ -103,6 +103,11 @@
 			<location>C:/NXP/S32DS_ARM_v2.2/S32DS/software/S32SDK_S32K1xx_RTM_3.0.0/platform/drivers/inc/interrupt_manager.h</location>
 		</link>
 		<link>
+			<name>SDK/platform/drivers/inc/lptmr_driver.h</name>
+			<type>1</type>
+			<location>C:/NXP/S32DS_ARM_v2.2/S32DS/software/S32SDK_S32K1xx_RTM_3.0.0/platform/drivers/inc/lptmr_driver.h</location>
+		</link>
+		<link>
 			<name>SDK/platform/drivers/inc/lpuart_driver.h</name>
 			<type>1</type>
 			<location>C:/NXP/S32DS_ARM_v2.2/S32DS/software/S32SDK_S32K1xx_RTM_3.0.0/platform/drivers/inc/lpuart_driver.h</location>
@@ -226,6 +231,21 @@
 			<name>SDK/platform/drivers/src/interrupt/interrupt_manager.c</name>
 			<type>1</type>
 			<location>C:/NXP/S32DS_ARM_v2.2/S32DS/software/S32SDK_S32K1xx_RTM_3.0.0/platform/drivers/src/interrupt/interrupt_manager.c</location>
+		</link>
+		<link>
+			<name>SDK/platform/drivers/src/lptmr/lptmr_driver.c</name>
+			<type>1</type>
+			<location>C:/NXP/S32DS_ARM_v2.2/S32DS/software/S32SDK_S32K1xx_RTM_3.0.0/platform/drivers/src/lptmr/lptmr_driver.c</location>
+		</link>
+		<link>
+			<name>SDK/platform/drivers/src/lptmr/lptmr_hw_access.c</name>
+			<type>1</type>
+			<location>C:/NXP/S32DS_ARM_v2.2/S32DS/software/S32SDK_S32K1xx_RTM_3.0.0/platform/drivers/src/lptmr/lptmr_hw_access.c</location>
+		</link>
+		<link>
+			<name>SDK/platform/drivers/src/lptmr/lptmr_hw_access.h</name>
+			<type>1</type>
+			<location>C:/NXP/S32DS_ARM_v2.2/S32DS/software/S32SDK_S32K1xx_RTM_3.0.0/platform/drivers/src/lptmr/lptmr_hw_access.h</location>
 		</link>
 		<link>
 			<name>SDK/platform/drivers/src/lpuart/lpuart_driver.c</name>

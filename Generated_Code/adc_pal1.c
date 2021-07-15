@@ -7,7 +7,7 @@
 **     Version     : Component SDK_S32K1xx_15, Driver 01.00, CPU db: 3.00.000
 **     Repository  : SDK_S32K1xx_15
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-07-13, 13:31, # CodeGen: 2
+**     Date/Time   : 2021-07-15, 10:13, # CodeGen: 13
 **
 **     Copyright 1997 - 2015 Freescale Semiconductor, Inc. 
 **     Copyright 2016-2017 NXP 
@@ -84,7 +84,7 @@ const adc_group_config_t adc_pal1_GroupArray0[3u] = {
         TRGMUX_TRIG_SOURCE_DISABLED,     /* triggerSource */
         ADC_DELAY_TYPE_NO_DELAY,      /* delayType */
         NULL,       /* delayArray */
-        false,     /* continuousConvEn */
+        true,     /* continuousConvEn */
         adc_pal1_callback00,       /* callback */
         NULL        /* callbackUserData */
     },
