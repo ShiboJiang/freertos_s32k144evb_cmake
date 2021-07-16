@@ -85,6 +85,7 @@
 #include "LedControl.h"
 #include "adc_app.h"
 #include "uart_app.h"
+#include "can_app.h"
 
 /* Priorities at which the tasks are created. */
 #define mainQUEUE_RECEIVE_TASK_PRIORITY (tskIDLE_PRIORITY + 2)
@@ -179,7 +180,6 @@ void rtos_start(void)
 
     /* Creat led control sig queue. */
     xLedCtrlSig = xQueueCreate(mainQUEUE_LENGTH, sizeof(uint8));
-
     /* voltage signal from adc . */
     xVolSig = xQueueCreate(mainQUEUE_LENGTH, sizeof(float32));
 
@@ -196,7 +196,7 @@ void rtos_start(void)
 
         xTaskCreate(vAdcApp, "ADC_Voltage_Calculate", TASK_ADC_STACK_SIZE, NULL, mainQUEUE_SEND_TASK_PRIORITY, NULL);
 
-        // xTaskCreate( vCommuReceive, "LedControl", configMINIMAL_STACK_SIZE, NULL, mainQUEUE_RECEIVE_TASK_PRIORITY, NULL);
+        xTaskCreate(vCanApp, "CAN_Communication", TASK_CAN_STACK_SIZE, NULL, mainQUEUE_SEND_TASK_PRIORITY, NULL);
 
         /* Create the software timer that is responsible for turning off the LED
         if the button is not pushed within 5000ms, as described at the top of
@@ -262,7 +262,7 @@ void vPort_C_ISRHandler(void)
 static void prvQueueSendTask(void *pvParameters)
 {
     TickType_t xNextWakeTime;
-    unsigned long ulValueToSend = 200UL;
+    unsigned long ulValueToSend = 0UL;
 
     /* Casting pvParameters to void because it is unused */
     (void)pvParameters;
@@ -272,11 +272,11 @@ static void prvQueueSendTask(void *pvParameters)
 
     for (;;)
     {
+        // print("Thread - prvQueueSendTask Run - 100ms\r\n");
         /* Place this task in the blocked state until it is time to run again.
         The block time is specified in ticks, the constant used converts ticks
         to ms.  While in the Blocked state this task will not consume any CPU
         time. */
-        vTaskDelayUntil(&xNextWakeTime, TASK_PERIOD_1000_MS);
         if (200UL == ulValueToSend)
         {
             ulValueToSend = 201UL;
@@ -291,6 +291,7 @@ static void prvQueueSendTask(void *pvParameters)
         will not block - it shouldn't need to block as the queue should always
         be empty at this point in the code. */
         xQueueSend(xQueue, &ulValueToSend, mainDONT_BLOCK);
+        vTaskDelayUntil(&xNextWakeTime, TASK_PERIOD_100_MS);
     }
 }
 /*-----------------------------------------------------------*/
@@ -304,6 +305,7 @@ static void prvQueueReceiveTask(void *pvParameters)
 
     for (;;)
     {
+        // print("Thread - prvQueueReceiveTask Run - 1ms\r\n");
         /* Wait until something arrives in the queue - this task will block
         indefinitely provided INCLUDE_vTaskSuspend is set to 1 in
         FreeRTOSConfig.h. */

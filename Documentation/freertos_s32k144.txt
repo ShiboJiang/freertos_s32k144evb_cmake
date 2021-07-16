@@ -180,7 +180,7 @@ Module "FreeRTOS"  (component FreeRTOS)
    - FreeRTOS_xTimerGetTimerDaemonTaskHandle -INCLUDE_xTimerGetTimerDaemonTaskHandle and configUSE_TIMERS must both be set to 1 
                 in FreeRTOSConfig.h for xTimerGetTimerDaemonTaskHandle() to be available.
    - FreeRTOS_pvTimerGetTimerID -Returns the ID assigned to the timer.
-   - FreeRTOS_pcTimerGetTimerName -Returns the human readable name assigned to a timer when the timer was created.
+   - FreeRTOS_pcTimerGetName -Returns the human readable name assigned to a timer when the timer was created.
    - FreeRTOS_xTimerIsTimerActive -Queries a timer to see if it is active or dormant. A timer will be dormant if:      1. It 
                 has been created but not started, or   2. It is an expired one-shot timer that has not been restarted.
    - FreeRTOS_xTimerPendFunctionCall -Used to pend the execution of a function to the RTOS daemon task (the timer service task, 
@@ -202,8 +202,6 @@ Module "FreeRTOS"  (component FreeRTOS)
                 command queue is private to the RTOS kernel itself and is not directly accessible to application code. The 
                 length of the timer command queue is set by the configTIMER_QUEUE_LENGTH configuration constant.
    - FreeRTOS_xTimerStopFromISR -A version of xTimerStart() that can be called from an interrupt service routine.
-   - FreeRTOS_portSWITCH_TO_USER_MODE -Sets the calling task into User mode. Once in User mode a task cannot return to 
-                Privileged mode.
    - FreeRTOS_vTaskAllocateMPURegions -Memory regions are assigned to a restricted task when the task is created using a call 
                 to xTaskCreateRestricted(). The regions can then be modified or redefined at run time using 
                 vTaskAllocateMPURegions().

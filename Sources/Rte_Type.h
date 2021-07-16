@@ -18,6 +18,15 @@
 /* A block time of zero simply means "don't block". */
 #define mainDONT_BLOCK                        ( 0UL )
 
+#define TASK_PERIOD_10_MS             ( 10 / portTICK_PERIOD_MS )
+#define TASK_PERIOD_100_MS            ( 100 / portTICK_PERIOD_MS )
+#define TASK_PERIOD_200_MS            ( 200 / portTICK_PERIOD_MS )
+#define TASK_PERIOD_500_MS            ( 500 / portTICK_PERIOD_MS )
+#define TASK_PERIOD_1000_MS           ( 1000 / portTICK_PERIOD_MS )
+
+#define TASK_ADC_STACK_SIZE           ((uint16) 500)
+#define TASK_CAN_STACK_SIZE           ((uint16) 500)
+
 /* AUTOSAR Base to Platform types mapping */
 typedef uint8_t boolean_T;
 typedef int16_t int16_T;
@@ -41,5 +50,13 @@ typedef uint8_T uint8;
 
 // #define false 0u
 // #define true 1u
+
+/* Type Define --------------------------------------------------------------*/
+typedef uint8 LedCtlType;
+
+/* Macro Define -------------------------------------------------------------*/
+#define LedCtlType_Invalid  0u
+#define LedCtlType_ON       1u
+#define LedCtlType_OFF      2u
 
 #endif

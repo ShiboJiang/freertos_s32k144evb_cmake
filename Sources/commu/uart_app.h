@@ -13,6 +13,12 @@
 #ifndef _UART_APP_H_
 #define _UART_APP_H_
 
+/* Kernel includes. */
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include "timers.h"
+
 #include "Rte_Type.h"
 #include "Cpu.h"
 #include "pin_mux.h"

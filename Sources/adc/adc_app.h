@@ -13,14 +13,18 @@
 #ifndef _ADC_APP_H_
 #define _ADC_APP_H_
 
+/* Kernel includes. */
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include "timers.h"
+
 #include "Rte_Type.h"
 #include "Cpu.h"
 #include "pin_mux.h"
 #include "adc_pal1.h"
 #include "clockMan1.h"
 #include "uart_app.h"
-#include "FreeRTOS.h"
-#include "task.h"
 
 /* Macro Define -------------------------------------------------------------*/
 #define ADC_INSTANCE    0UL
@@ -31,9 +35,6 @@
 #define NUM_CONV_GROUP_ITERATIONS       10UL
 #define DELAY_BETWEEN_SW_TRIG_GROUPS    1500UL /* [milliseconds] */
 
-#define TASK_PERIOD_100_MS            ( 100 / portTICK_PERIOD_MS )
-#define TASK_PERIOD_1000_MS            ( 1000 / portTICK_PERIOD_MS )
-#define TASK_ADC_STACK_SIZE            ((uint16) 500)
 
 /* Import Parameters --------------------------------------------------------*/
 extern QueueHandle_t xVolSig;

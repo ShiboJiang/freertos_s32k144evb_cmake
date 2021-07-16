@@ -18,7 +18,7 @@
         <Line>Generated_Code\FreeRTOSConfig.h</Line>
         <Line>Generated_Code\adc_pal_cfg.h</Line>
       </GenExtraFiles>
-      <XtraAge0>1391412516</XtraAge0>
+      <XtraAge0>1391479644</XtraAge0>
       <XtraAge1>1391412516</XtraAge1>
       <GenExtraFileType1>4</GenExtraFileType1>
       <GenExtraFileType0>4</GenExtraFileType0>
@@ -266,7 +266,7 @@
     <HeaderAge>-1</HeaderAge>
     <CodeAge>-1</CodeAge>
     <AsemblAge>-1</AsemblAge>
-    <GenNumMethods>108</GenNumMethods>
+    <GenNumMethods>107</GenNumMethods>
     <xCoRoutineCreate>true</xCoRoutineCreate>
     <crDELAY>true</crDELAY>
     <crQUEUE_SEND>true</crQUEUE_SEND>
@@ -328,7 +328,7 @@
     <xTimerDelete>true</xTimerDelete>
     <xTimerGetTimerDaemonTaskHandle>true</xTimerGetTimerDaemonTaskHandle>
     <pvTimerGetTimerID>true</pvTimerGetTimerID>
-    <pcTimerGetTimerName>true</pcTimerGetTimerName>
+    <pcTimerGetName>true</pcTimerGetName>
     <xTimerIsTimerActive>true</xTimerIsTimerActive>
     <xTimerPendFunctionCall>true</xTimerPendFunctionCall>
     <xTimerPendFunctionCallFromISR>true</xTimerPendFunctionCallFromISR>
@@ -338,7 +338,6 @@
     <xTimerStartFromISR>true</xTimerStartFromISR>
     <xTimerStop>true</xTimerStop>
     <xTimerStopFromISR>true</xTimerStopFromISR>
-    <portSWITCH_TO_USER_MODE>true</portSWITCH_TO_USER_MODE>
     <vTaskAllocateMPURegions>true</vTaskAllocateMPURegions>
     <xTaskCreate>true</xTaskCreate>
     <xTaskCreateRestricted>true</xTaskCreateRestricted>
@@ -358,7 +357,7 @@
     <uxTaskGetStackHighWaterMark>true</uxTaskGetStackHighWaterMark>
     <eTaskGetState>true</eTaskGetState>
     <uxTaskGetSystemState>true</uxTaskGetSystemState>
-    <pcTaskGetTaskName>false</pcTaskGetTaskName>
+    <pcTaskGetName>false</pcTaskGetName>
     <xTaskGetTickCount>true</xTaskGetTickCount>
     <xTaskGetTickCountFromISR>true</xTaskGetTickCountFromISR>
     <vTaskList>true</vTaskList>
@@ -666,7 +665,7 @@
   <UsedSrcFiles>
     <SrcFile0>Drivers\interrupt_manager.src=-1</SrcFile0>
     <SrcFile1>Drivers\osifcommon\osif.drv=-1</SrcFile1>
-    <SrcFile2>Beans\_SDK\SdkOptions.chg=1331017399</SrcFile2>
+    <SrcFile2>Beans\_SDK\SdkOptions.chg=1353490899</SrcFile2>
     <SrcFile3>Drivers\Common\EBGNSupport\StringLib.prg=1316652646</SrcFile3>
     <SrcFile4>Drivers\Common\S32KSettings.inc=1316652645</SrcFile4>
     <SrcFile5>Drivers\S32K\PinSettings_S32K144_100.prg=-1</SrcFile5>
@@ -707,7 +706,7 @@
     <SrcFile40>Drivers\S32_SDK_DMA_16CH\edma_code.drv=-1</SrcFile40>
     <SrcFile41>Drivers\S32K\S32K144_SDK01\interrupt_manager.drv=1316652646</SrcFile41>
     <SrcFile42>Drivers\S32K\S32K144_SDK01\lpuart.drv=-1</SrcFile42>
-    <SrcFile43>Beans\adc_pal\Drivers\S32K\S32_SDK\adc_pal_global_cfg.drv=1331017399</SrcFile43>
+    <SrcFile43>Beans\adc_pal\Drivers\S32K\S32_SDK\adc_pal_global_cfg.drv=1353490899</SrcFile43>
     <SrcFile44>Drivers\Common\InitRegBlock.prg=1316652645</SrcFile44>
     <SrcFile45>Drivers\lpuart.src=-1</SrcFile45>
     <SrcFile46>Drivers\PEx_S32K.src=1316652645</SrcFile46>

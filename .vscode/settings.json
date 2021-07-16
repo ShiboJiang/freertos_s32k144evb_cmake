@@ -24,7 +24,11 @@
         "helper_functions.h": "c",
         "adc_app.h": "c",
         "uart_app.h": "c",
-        "dmacontroller1.h": "c"
+        "dmacontroller1.h": "c",
+        "task.h": "c",
+        "can_app.h": "c",
+        "queue.h": "c",
+        "string.h": "c"
     }
 
 }

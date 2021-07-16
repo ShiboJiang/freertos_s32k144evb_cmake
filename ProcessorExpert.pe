@@ -4874,7 +4874,7 @@
         <ItemSymbol>ProjectComponentsCountChanged</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>1</Value>
+        <Value>2</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>ModuleName_ADC</ItemSymbol>
@@ -19429,7 +19429,7 @@
         <UsrMethodName>pvTimerGetTimerID</UsrMethodName>
       </ItemState>
       <ItemState>
-        <ItemSymbol>pcTimerGetTimerName</ItemSymbol>
+        <ItemSymbol>pcTimerGetName</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
@@ -19437,7 +19437,7 @@
         <Value>true</Value>
         <LastSelection>true</LastSelection>
         <LastUserSel>yes</LastUserSel>
-        <UsrMethodName>pcTimerGetTimerName</UsrMethodName>
+        <UsrMethodName>pcTimerGetName</UsrMethodName>
       </ItemState>
       <ItemState>
         <ItemSymbol>xTimerIsTimerActive</ItemSymbol>
@@ -19552,15 +19552,6 @@
         <ItemSymbol>FreeRTOS_Task managementgroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>portSWITCH_TO_USER_MODE</ItemSymbol>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-        <LastSelection>true</LastSelection>
-        <LastUserSel>always</LastUserSel>
-        <UsrMethodName>portSWITCH_TO_USER_MODE</UsrMethodName>
       </ItemState>
       <ItemState>
         <ItemSymbol>vTaskAllocateMPURegions</ItemSymbol>
@@ -19750,7 +19741,7 @@
         <UsrMethodName>uxTaskGetSystemState</UsrMethodName>
       </ItemState>
       <ItemState>
-        <ItemSymbol>pcTaskGetTaskName</ItemSymbol>
+        <ItemSymbol>pcTaskGetName</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
@@ -19758,7 +19749,7 @@
         <Value>true</Value>
         <LastSelection>true</LastSelection>
         <LastUserSel>yes</LastUserSel>
-        <UsrMethodName>pcTaskGetTaskName</UsrMethodName>
+        <UsrMethodName>pcTaskGetName</UsrMethodName>
       </ItemState>
       <ItemState>
         <ItemSymbol>xTaskGetTickCount</ItemSymbol>
@@ -19911,6 +19902,37 @@
         <LastSelection>true</LastSelection>
         <LastUserSel>always</LastUserSel>
         <UsrMethodName>xTaskCallApplicationTaskHook</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>pcTimerGetTimerName</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>yes</LastUserSel>
+        <UsrMethodName>pcTimerGetTimerName</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>portSWITCH_TO_USER_MODE</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>portSWITCH_TO_USER_MODE</UsrMethodName>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>pcTaskGetTaskName</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>yes</LastUserSel>
+        <UsrMethodName>pcTaskGetTaskName</UsrMethodName>
       </ItemState>
     </Methods>
     <Events>

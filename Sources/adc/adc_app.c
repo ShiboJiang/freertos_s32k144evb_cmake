@@ -70,6 +70,7 @@ void vAdcApp (void *pvParameters)
     xNextWakeTime = xTaskGetTickCount();
     for( ;; )
     {
+        // print("Thread - vAdcApp Run - 500ms\r\n");
         /* Wait until something arrives in the queue - this task will block
         indefinitely provided INCLUDE_vTaskSuspend is set to 1 in
         FreeRTOSConfig.h. */

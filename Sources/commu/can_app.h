@@ -1,18 +1,17 @@
 /**
  *-----------------------------------------------------------------------------
- * @file LedControl.h
+ * @file can_app.h
  * @brief 
  * @author shibo jiang
  * @version 0.0.0.1
- * @date 2021-07-12
+ * @date 2021-07-16
  * @note [change history] 
  * 
- * @copyright NAAA_
+ * @copyright GEELY AUTOMOBILE RESEARCH INSTITUTE CO.,LTD Copyright (c) 2020
  *-----------------------------------------------------------------------------
  */
-
-#ifndef _LEDCONTROL_H_
-#define _LEDCONTROL_H_
+#ifndef _CAN_APP_H_
+#define _CAN_APP_H_
 
 /* Kernel includes. */
 #include "FreeRTOS.h"
@@ -20,19 +19,22 @@
 #include "queue.h"
 #include "timers.h"
 
-#include "Rte_LedControl_Type.h"
+#include "Rte_Type.h"
+#include "Cpu.h"
 #include "pin_mux.h"
-#include "BoardDefines.h"
+#include "dmaController1.h"
+#include "lpuart1.h"
+#include "clockMan1.h"
+#include "string.h"
 #include "uart_app.h"
 
-/* Macro Define -------------------------------------------------------------*/
-#define userQUEUE_SEND_MS_10            ( 10 / portTICK_PERIOD_MS )
-
 /* Import Parameters --------------------------------------------------------*/
+extern QueueHandle_t xVolSig;
 extern QueueHandle_t xLedCtrlSig;
 
-
 /* Export Parameters --------------------------------------------------------*/
-extern void vLedControl(void *pvParameters);
+
+extern void vCanApp (void *pvParameters);
+
 
 #endif

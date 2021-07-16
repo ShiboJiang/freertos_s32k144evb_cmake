@@ -18,14 +18,17 @@ void vLedControl(void *pvParameters)
 {
     /* Casting pvParameters to void because it is unused */
     (void)pvParameters;
-
+    TickType_t xNextWakeTime;
     LedCtlType uLedCtlSig = LedCtlType_Invalid;
+
+    // xNextWakeTime = xTaskGetTickCount();
     for( ;; )
     {
+        // print("Thread - vLedControl Run - 200ms\r\n");
         /* Wait until something arrives in the queue - this task will block
         indefinitely provided INCLUDE_vTaskSuspend is set to 1 in
         FreeRTOSConfig.h. */
-        xQueueReceive( xLedCtrlSig, &uLedCtlSig, portMAX_DELAY );
+        xQueueReceive( xLedCtrlSig, &uLedCtlSig, portMAX_DELAY);
 
         /*  To get here something must have been received from the queue, but
         is it the expected value?  If it is, toggle the LED. */
@@ -41,5 +44,6 @@ void vLedControl(void *pvParameters)
         {
             /*Do Nothing*/
         }
+        // vTaskDelayUntil( &xNextWakeTime, TASK_PERIOD_10_MS );
     }
 }

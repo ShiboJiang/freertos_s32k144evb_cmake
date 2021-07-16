@@ -15,12 +15,4 @@
 
 #include "Rte_Type.h"
 
-/* Type Define --------------------------------------------------------------*/
-typedef uint8 LedCtlType;
-
-/* Macro Define -------------------------------------------------------------*/
-#define LedCtlType_Invalid  0u
-#define LedCtlType_ON       1u
-#define LedCtlType_OFF      2u
-
 #endif
