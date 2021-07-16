@@ -7,7 +7,7 @@
  * @date 2021-07-16
  * @note [change history] 
  * 
- * @copyright GEELY AUTOMOBILE RESEARCH INSTITUTE CO.,LTD Copyright (c) 2020
+ * @copyright NAAA_
  *-----------------------------------------------------------------------------
  */
 #ifndef _CAN_APP_H_
