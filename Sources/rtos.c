@@ -196,7 +196,7 @@ void rtos_start(void)
 
         xTaskCreate(vAdcApp, "ADC_Voltage_Calculate", TASK_ADC_STACK_SIZE, NULL, mainQUEUE_SEND_TASK_PRIORITY, NULL);
 
-        xTaskCreate(vCanApp, "CAN_Communication", TASK_CAN_STACK_SIZE, NULL, mainQUEUE_SEND_TASK_PRIORITY, NULL);
+        // xTaskCreate(vCanApp, "CAN_Communication", TASK_CAN_STACK_SIZE, NULL, mainQUEUE_SEND_TASK_PRIORITY, NULL);
 
         /* Create the software timer that is responsible for turning off the LED
         if the button is not pushed within 5000ms, as described at the top of
@@ -405,7 +405,8 @@ static void prvSetupHardware(void)
     /* The interrupt calls an interrupt safe API function - so its priority must
     be equal to or lower than configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY. */
     INT_SYS_SetPriority(BTN_PORT_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY);
-
+    /* Initial CAN */
+    CAN_Init(&can_pal1_instance, &can_pal1_Config0);
     print(initOKStr);
 }
 /*-----------------------------------------------------------*/

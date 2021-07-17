@@ -63,6 +63,7 @@ void vAdcApp (void *pvParameters)
     float32 avgVolts;
     char msg[255] = { 0, };
     TickType_t xNextWakeTime;
+    size_t heap_msg;
 
     /* Casting pvParameters to void because it is unused */
     (void)pvParameters; 
@@ -114,6 +115,9 @@ void vAdcApp (void *pvParameters)
 
         // status = LPUART_DRV_Deinit(INST_LPUART1);
         // DEV_ASSERT(status == STATUS_SUCCESS);
+        heap_msg = xPortGetFreeHeapSize();
+        printf("ADC Free Heap is (bytes) %d \r\n",(int32_t)heap_msg);
+        printf("ADC Free Stack size is (bits) %d \r\n",(int32_t)uxTaskGetStackHighWaterMark(NULL));
         xQueueSend( xVolSig, &avgVolts, mainDONT_BLOCK );
         vTaskDelayUntil( &xNextWakeTime, TASK_PERIOD_1000_MS );
     }

@@ -12,37 +12,73 @@
  */
 #include "can_app.h"
 
+can_buff_config_t g_CanBufferConfig =
+{
+        .enableFD = false,
+        .enableBRS = false,
+        .fdPadding = 0U,
+        .idType = CAN_MSG_ID_STD,
+        .isRemote = false
+};
+
+static void CAN_Config(void);
+
 void vCanApp (void *pvParameters)
 {
     TickType_t xNextWakeTime;
     /* Casting pvParameters to void because it is unused */
     (void)pvParameters; 
     float32 avgVolts;
-    // char msg[255] = { 0, };
+    /* Define receive buffer */
+    can_message_t recvMsg;
+    can_message_t sendMsg;
     LedCtlType uLedCtlSig = LedCtlType_Invalid;
 
     /* Thread start */
     uLedCtlSig = LedCtlType_ON;
+    CAN_Config();
     xNextWakeTime = xTaskGetTickCount();
     for( ;; )
     {
-        print("Thread - vCanApp Run - 100ms\r\n");
+        // print("Thread - vCanApp Run - 100ms\r\n");
         xQueuePeek(xVolSig, &avgVolts, mainDONT_BLOCK);
+        
+        /* Start receiving data in RX_MAILBOX. */
+        CAN_Receive(&can_pal1_instance, RX_MAILBOX, &recvMsg);
 
-        if (uLedCtlSig == LedCtlType_ON)
+        /* Wait until the previous FlexCAN receive is completed */
+        while(CAN_GetTransferStatus(&can_pal1_instance, RX_MAILBOX) == STATUS_BUSY);
+
+        /* Check the received message ID and payload */
+        if((recvMsg.data[0] == LED0_CHANGE_REQUESTED) &&
+            recvMsg.id == RX_MSG_ID)
         {
             uLedCtlSig = LedCtlType_OFF;
         }
-        else if (uLedCtlSig == LedCtlType_OFF)
+        else if((recvMsg.data[0] == LED1_CHANGE_REQUESTED) &&
+                recvMsg.id == RX_MSG_ID)
         {
             uLedCtlSig = LedCtlType_ON;
         }
         else
         {
-            /* code */
+            uLedCtlSig = LedCtlType_Invalid;
         }
 
         xQueueSend(xLedCtrlSig, &uLedCtlSig, mainDONT_BLOCK );
-        vTaskDelayUntil( &xNextWakeTime, TASK_PERIOD_100_MS );
+        /* Send the information via CAN */
+        sendMsg.cs = 0U;
+        sendMsg.id = TX_MSG_ID;
+        sendMsg.data[0] = (uint8)(avgVolts*50);
+        sendMsg.length = 8U;
+        CAN_Send(&can_pal1_instance, TX_MAILBOX, &sendMsg);
+        vTaskDelayUntil( &xNextWakeTime, TASK_PERIOD_10_MS );
     }
+}
+
+static void CAN_Config(void)
+{
+	CAN_ConfigRxBuff(&can_pal1_instance, RX_MAILBOX, &g_CanBufferConfig, MSG_ALL_ACCEPT);
+	CAN_SetRxFilter(&can_pal1_instance,FLEXCAN_MSG_ID_STD, RX_MAILBOX,MSG_ALL_ACCEPT);
+	CAN_ConfigTxBuff(&can_pal1_instance, TX_MAILBOX, &g_CanBufferConfig);
 }

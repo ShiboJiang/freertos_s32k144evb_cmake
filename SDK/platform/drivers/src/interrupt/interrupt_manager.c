@@ -51,11 +51,17 @@
  * The return statement before end of function is used for simpler code structure
  * and better readability.
  *
+ * @section [global]
+ * Violates MISRA 2012 Advisory Rule 8.11, When an array with external linkage
+ * is declared, its size should be explicitly specified.
+ * The number of configurations/callbacks can be zero.
+ * On the other side C language forbids declaring array of size zero.
  */
 
  /*! @file interrupt_manager.c */
 
 #include "interrupt_manager.h"
+#include "startup.h"
 
 /*******************************************************************************
  * Definitions
@@ -73,8 +79,14 @@ static int32_t g_interruptDisableCount = 0;
  */
 #if defined(__ARMCC_VERSION)
     extern uint32_t __VECTOR_RAM;
+    extern uint32_t __VECTOR_TABLE;
+    extern uint32_t __DATA_ROM;
+    extern uint32_t __RAM_START;
 #else
     extern uint32_t __VECTOR_RAM[((uint32_t)(FEATURE_INTERRUPT_IRQ_MAX)) + 16U + 1U];
+    extern uint32_t __VECTOR_TABLE[((uint32_t)(FEATURE_INTERRUPT_IRQ_MAX)) + 16U + 1U];
+    extern uint32_t __DATA_ROM[];
+    extern uint32_t __DATA_END[];
 #endif
 
 /*******************************************************************************
@@ -111,18 +123,29 @@ void INT_SYS_InstallHandler(IRQn_Type irqNumber,
     DEV_ASSERT(FEATURE_INTERRUPT_IRQ_MIN <= irqNumber);
     DEV_ASSERT(dev_irqNumber <= (int32_t)FEATURE_INTERRUPT_IRQ_MAX);
 
-    /* Check whether there is vector table in RAM */
-    DEV_ASSERT((uint32_t)__VECTOR_RAM == S32_SCB->VTOR);
-
 #endif /*(defined(DEV_ERROR_DETECT) || defined(CUSTOM_DEVASSERT)) */
 
-    uint32_t * pVectorRam = (uint32_t *)__VECTOR_RAM;
+    const uint32_t * aVectorRam = (uint32_t *)__VECTOR_RAM;
+    const uint32_t * aVectorTable = (uint32_t *)__VECTOR_TABLE;
 
-    /* Save the former handler pointer */
-    if (oldHandler != (isr_t *) 0)
+    /* Check whether there is vector table in RAM */
+#if defined(__ARMCC_VERSION)
+    if ((aVectorRam != aVectorTable) || (__DATA_ROM > __RAM_START))
+#elif (defined(__ICCARM__))
+    if ((aVectorRam != aVectorTable) || (INTERRUPTS_SECTION_START != 0))
+#else
+    const uint32_t * aDataRom = (uint32_t *)__DATA_ROM;
+    const uint32_t * aDataRam = (uint32_t *)__DATA_END;
+    if ((aVectorRam != aVectorTable) || (aDataRom == aDataRam))
+#endif
     {
-        *oldHandler = (isr_t)pVectorRam[((int32_t)irqNumber) + 16];
-    }
+        uint32_t * pVectorRam = (uint32_t *)__VECTOR_RAM;
+
+        /* Save the former handler pointer */
+        if (oldHandler != (isr_t *) 0)
+        {
+            *oldHandler = (isr_t)pVectorRam[((int32_t)irqNumber) + 16];
+        }
 
 #if FEATURE_MSCM_HAS_INTERRUPT_ROUTER
 
@@ -140,9 +163,18 @@ void INT_SYS_InstallHandler(IRQn_Type irqNumber,
 
 #endif /* FEATURE_MSCM_HAS_INTERRUPT_ROUTER */
 
-    /* Set handler into vector table */
-    pVectorRam[((int32_t)irqNumber) + 16] = (uint32_t)newHandler;
+        /* Set handler into vector table */
+        pVectorRam[((int32_t)irqNumber) + 16] = (uint32_t)newHandler;
+    }
+    else
+    {
+        #if (defined(DEV_ERROR_DETECT) || defined(CUSTOM_DEVASSERT))
+            const uint32_t * pVectorRam = (uint32_t *)__VECTOR_RAM;
+            /* Check if the existing handler is the same as the one already present in the vector */
+            DEV_ASSERT(pVectorRam[((int32_t)irqNumber) + 16] == (uint32_t)newHandler);
 
+        #endif /*(defined(DEV_ERROR_DETECT) || defined(CUSTOM_DEVASSERT)) */
+    }
 }
 
 /*FUNCTION**********************************************************************

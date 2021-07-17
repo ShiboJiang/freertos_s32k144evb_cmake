@@ -442,6 +442,133 @@ Module "pin_mux"   (component PinSettings)
    - pin_mux_PINS_DRV_ReadPins -This function returns the current input values from a port. Only pins configured as input will 
                 have meaningful values
 
+Module "sbc_uja116x1" (component sbc_uja116x)
+   - sbc_uja116x1_SBC_InitDriver -This function internally stores LPSPI instance used by the driver.
+   - sbc_uja116x1_SBC_InitDevice -This function initializes all registers. Please use InitDriver first.
+   - sbc_uja116x1_SBC_SetVreg -This function configures Regulator control registers.
+   - sbc_uja116x1_SBC_GetVreg -This function reads Regulator control registers.
+   - sbc_uja116x1_SBC_SetWatchdog -This function configures Watchdog control register (0x00).
+   - sbc_uja116x1_SBC_GetWatchdog -This function reads Watchdog control register (0x00).
+   - sbc_uja116x1_SBC_SetMode -This function writes to Mode control register. (0x01).
+   - sbc_uja116x1_SBC_GetMode -This function reads Mode control register. (0x01).
+   - sbc_uja116x1_SBC_SetFailSafe -This function writes to Fail-safe control register (0x02). The dedicated LIMP pin can be 
+                used to enable so called limp home hardware in the event of a serious ECU failure. Detectable failure 
+                conditions include SBC overtemperature events, loss of watchdog service, short-circuits on pins RSTN or V1 and 
+                user-initiated or external reset events. The LIMP pin is a battery-robust, active-LOW, open-drain output. The 
+                LIMP pin can also be forced LOW by setting bit LHC in the Fail-safe control register. The limp-home function 
+                and the reset counter are disabled in Forced Normal mode. The LIMP pin is floating, RCC remains unchanged and 
+                bit LHC = 0. RCC -reset counter control. incremented every time the SBC enters Reset mode while FNMC = 0; RCC 
+                overflows from 11 to 00; default at power-on is 00. For ignore settings of rcc use NULL pointer or otherwise 
+                send pointer to variable.
+   - sbc_uja116x1_SBC_GetFailSafe -This function reads from Fail-safe control register (0x02). The dedicated LIMP pin can be 
+                used to enable so called limp home hardware in the event of a serious ECU failure. Detectable failure 
+                conditions include SBC overtemperature events, loss of watchdog service, short-circuits on pins RSTN or V1 and 
+                user-initiated or external reset events. The LIMP pin is a battery-robust, active-LOW, open-drain output. The 
+                LIMP pin can also be forced LOW by setting bit LHC in the Fail-safe control register. The limp-home function 
+                and the reset counter are disabled in Forced Normal mode. The LIMP pin is floating, RCC remains unchanged and 
+                bit LHC = 0.
+   - sbc_uja116x1_SBC_SetSystemEvents -This function writes System event capture enable register (0x04). This function enables 
+                or disables overtemperature warning, SPI failure enable.
+   - sbc_uja116x1_SBC_GetSystemEvents -This function reads System event capture enable register (0x04). This function reads 
+                content of overtemperature warning and SPI failure settings.
+   - sbc_uja116x1_SBC_SetLock -This function writes to Lock control register (0x0A). Sections of the register address area can 
+                be write-protected to protect against unintended modifications. This facility only protects locked bits from 
+                being modified via the SPI and will not prevent the UJA116x updating status registers etc. For SPI write 
+                disable set lock bit to 1. This is mask for set lock control register.
+   - sbc_uja116x1_SBC_GetLock -This function reads Lock control register (0x0A). Sections of the register address area can be 
+                write-protected to protect against unintended modifications. This facility only protects locked bits from being 
+                modified via the SPI and will not prevent the UJA116x updating status registers etc. For SPI write disable set 
+                lock bit to 1. This is mask for set lock control register.
+   - sbc_uja116x1_SBC_SetCanConfig -This function configures CAN peripheral behavior. This function configures CAN peripheral 
+                behavior. This function configures several registers which configure CAN. It contains CAN control register, 
+                Transceiver event capture enable register, CAN data rate selection, ID registers, ID mask registers, Frame 
+                control register, Data mask 0 - 7 configuration.
+   - sbc_uja116x1_SBC_GetCanConfig -This function reads CAN peripheral settings. This function configures CAN peripheral 
+                behavior. This function configures several registers which configure CAN. It contains CAN control register, 
+                Transceiver event capture enable register, CAN data rate selection, ID registers, ID mask registers, Frame 
+                control register, Data mask 0 - 7 configuration.
+   - sbc_uja116x1_SBC_SetWakePin -This function writes to WAKE pin event capture enable register (0x4C). Local wake-up is 
+                enabled via bits WPRE and WPFE in the WAKE pin event capture enable register. A wake-up event is triggered by a 
+                LOW-to-HIGH (ifWPRE = 1) and/or a HIGH-to-LOW (if WPFE = 1) transition on the WAKE pin. This arrangement allows 
+                for maximum flexibility when designing a local wake-up circuit. In applications that do not use the local 
+                wake-up facility, local wake-up should be disabled and the WAKE pin connected to GND.
+   - sbc_uja116x1_SBC_GetWakePin -This function reads WAKE pin event capture enable register (0x4C). Local wake-up is enabled 
+                via bits WPRE and WPFE in the WAKE pin event capture enable register. A wake-up event is triggered by a 
+                LOW-to-HIGH (ifWPRE = 1) and/or a HIGH-to-LOW (if WPFE = 1) transition on the WAKE pin. This arrangement allows 
+                for maximum flexibility when designing a local wake-up circuit. In applications that do not use the local 
+                wake-up facility, local wake-up should be disabled and the WAKE pin connected to GND.
+   - sbc_uja116x1_SBC_GetMainStatus -This function reads Main status register. This function will clear R/W registers 
+                automatically after reading.
+   - sbc_uja116x1_SBC_GetWatchdogStatus -This function reads Watchdog status register. This function will clear R/W registers 
+                automatically after reading.
+   - sbc_uja116x1_SBC_GetSupplyStatus -This functions reads Supply voltage status register. This function clear R/W status 
+                after reading writing 0 to register. It contains V2/VEXT status and V1 status.
+   - sbc_uja116x1_SBC_GetCanStatus -This functions reads Transceiver status register. It contains CAN transceiver status, CAN 
+                partial networking error, CAN partial networking status, CAN oscillator status, CAN-bus silence status, VCAN 
+                status, CAN failure status.
+   - sbc_uja116x1_SBC_GetWakeStatus -This functions reads WAKE pin status register. This function reads switching threshold of 
+                voltage on WAKE pin.
+   - sbc_uja116x1_SBC_GetEventsStatus -This functions reads Event capture registers. This function reads switching threshold of 
+                voltage on WAKE pin. This functions reads global events statuses: Global event status, System event status, 
+                Supply event status, Transceiver event status, WAKE pin event status.
+   - sbc_uja116x1_SBC_CleanEvents -This function clears Event capture registers. It contains Global event status, System event 
+                status, Supply event status, Transceiver event status, WAKE pin event status. This function write 1 to bit 
+                which should be delete. After an event source has been identified, the status flag should be cleared (set to 0) 
+                by writing 1 to the relevant status bit (writing 0 will have no effect). Write true value to appropriate 
+                enumeration.
+   - sbc_uja116x1_SBC_GetAllStatus -This function reads all statuses from SBC device. It reads all status registers: Main 
+                status and Watchdog status, Supply voltage status, Transceiver status, WAKE pin status, Event capture registers.
+   - sbc_uja116x1_SBC_GetMtpnvStatus -This function reads MTPNV status register. The MTPNV cells can be reprogrammed a maximum 
+                of 200 times (Ncy(W)MTP). Bit NVMPS in the MTPNV status register indicates whether the non-volatile cells can 
+                be reprogrammed. This register also contains a write counter, WRCNTS, that is incremented each time the MTPNV 
+                cells are reprogrammed (up to a maximum value of 111111; there is no overflow; performing a factory reset also 
+                increments the counter). This counter is provided for information purposes only; reprogramming will not be 
+                rejected when it reaches its maximum value.
+   - sbc_uja116x1_SBC_GetFactoriesSettings -This function reads Start-up control register and SBC configuration control 
+                register. It is non-volatile memory with limited write access. The UJA116x contains Multiple Time Programmable 
+                Non-Volatile (MTPNV) memory cells that allow some of the default device settings to be reconfigured. The MTPNV 
+                memory address range is from 0x73 to 0x74. NXP delivers the UJA116x in so-called Forced Normal mode, also 
+                referred to as the factory preset configuration. In order to change the default settings, the device must be in 
+                Forced Normal mode with FNMC = 1 and NVMPS = 1. In Forced Normal mode, the watchdog is disabled, all regulators 
+                are on and the CAN transceiver is in Active mode.
+   - sbc_uja116x1_SBC_ChangeFactoriesSettings -This function sets Start-up control register and SBC configuration control 
+                register. It is non-volatile memory with limited write access. The UJA116x contains Multiple Time Programmable 
+                Non-Volatile (MTPNV) memory cells that allow some of the default device settings to be reconfigured. The MTPNV 
+                memory address range is from 0x73 to 0x74. NXP delivers the UJA116x in so-called Forced Normal mode, also 
+                referred to as the factory preset configuration. In order to change the default settings, the device must be in 
+                Forced Normal mode with FNMC = 1 and NVMPS = 1. In Forced Normal mode, the watchdog is disabled, all regulators 
+                are on and the CAN transceiver is in Active mode. Note for default settings see sbc_factories_conf_t comment. 
+                If the device has been programmed previously, the factory presets may need to be restored before reprogramming 
+                can begin. When the factory presets have been restored successfully, a system reset is generated automatically 
+                and UJA116x switches back to Forced Normal mode. Factory preset values are restored if the following conditions 
+                apply continuously for at least td(MTPNV) during battery power-up: -pin RSTN is held LOW -CANH is pulled up to 
+                VBAT -CANL is pulled down to GND.
+   - sbc_uja116x1_SBC_DataTransfer -This function sends data over LSPI to SBC device. This function sends 8 bites to SBC device 
+                register according device address which is selected. This transfer uses 16bit LSPI. CS polarity - active low, 
+                clock phase on second edge. Clock polarity active high.
+   - sbc_uja116x1_SBC_FeedWatchdog -This function refreshes watchdog period by writing byte to the SBC watchdog register. This 
+                function must be called periodically according Watchdog mode control and Nominal watchdog period settings. Note:
+                Unxpected behaviour can happend if watchdog mode is set to timeout period and watchdog is triggered exactly at 
+                50% of period. Be sure you trigger watchdog before 50% or above 50% of watchdog period.
+
+Module "can_pal1"  (component can_pal)
+   - can_pal1_CAN_Init -Initializes the CAN module.
+   - can_pal1_CAN_Deinit -De-initializes the CAN module.
+   - can_pal1_CAN_SetBitrate -Configures the CAN bitrate.
+   - can_pal1_CAN_GetBitrate -Returns the CAN bitrate.
+   - can_pal1_CAN_ConfigTxBuff -Configures a buffer for transmission.
+   - can_pal1_CAN_ConfigRemoteResponseBuff -Configures a transmit message buffer for remote frame response.
+   - can_pal1_CAN_ConfigRxBuff -Configures a buffer for reception.
+   - can_pal1_CAN_Send -Sends a CAN frame using the specified buffer.
+   - can_pal1_CAN_SendBlocking -Sends a CAN frame using the specified buffer, in a blocking manner.
+   - can_pal1_CAN_Receive -Receives a CAN frame using the specified message buffer.
+   - can_pal1_CAN_ReceiveBlocking -Receives a CAN frame using the specified buffer, in a blocking manner.
+   - can_pal1_CAN_AbortTransfer -Ends a non-blocking CAN transfer early.
+   - can_pal1_CAN_SetRxFilter -Configures an ID filter for a specific reception buffer.
+   - can_pal1_CAN_GetTransferStatus -Returns the state of the previous CAN transfer.
+   - can_pal1_CAN_InstallEventCallback -Installs a callback function for the IRQ handler.
+   - can_pal1_CAN_GetDefaultConfig -Returns the default values for the CAN module.
+
 Module "Cpu"       (component S32K144_100)
    - Cpu_SystemInit -This function disables the watchdog, enables FPU and the power mode protection. SystemInit is called from 
                 startup_device file.

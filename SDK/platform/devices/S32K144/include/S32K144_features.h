@@ -1047,7 +1047,7 @@ PCC_INVALID_INDEX,                  /*!< End of PCC clocks               78 */  
 
 /* Time to wait for FIRC to stabilize (number of
  * cycles when core runs at maximum speed - 112 MHz */
-#define FIRC_STABILIZATION_TIMEOUT 20U
+#define FIRC_STABILIZATION_TIMEOUT 100U
 
 /* Time to wait for SOSC to stabilize (number of
  * cycles when core runs at maximum speed - 112 MHz */

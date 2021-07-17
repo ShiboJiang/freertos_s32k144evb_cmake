@@ -25,7 +25,7 @@
 #define TASK_PERIOD_1000_MS           ( 1000 / portTICK_PERIOD_MS )
 
 #define TASK_ADC_STACK_SIZE           ((uint16) 500)
-#define TASK_CAN_STACK_SIZE           ((uint16) 500)
+#define TASK_CAN_STACK_SIZE           ((uint16) 100)
 
 /* AUTOSAR Base to Platform types mapping */
 typedef uint8_t boolean_T;
@@ -58,5 +58,11 @@ typedef uint8 LedCtlType;
 #define LedCtlType_Invalid  0u
 #define LedCtlType_ON       1u
 #define LedCtlType_OFF      2u
+
+typedef enum
+{
+    LED0_CHANGE_REQUESTED = 0x00U,
+    LED1_CHANGE_REQUESTED = 0x01U
+} can_commands_list;
 
 #endif

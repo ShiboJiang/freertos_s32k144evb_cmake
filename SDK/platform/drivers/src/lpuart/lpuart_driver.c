@@ -940,7 +940,7 @@ status_t LPUART_DRV_SetBaudRate(uint32_t instance, uint32_t desiredBaudRate)
     DEV_ASSERT(instance < LPUART_INSTANCE_COUNT);
 
     uint16_t sbr, sbrTemp, i;
-    uint32_t osr, tempDiff, calculatedBaud, baudDiff;
+    uint32_t osr, tempDiff, calculatedBaud, baudDiff, maxOsr;
     uint32_t lpuartSourceClock;
     clock_names_t instanceClkName = s_lpuartClkNames[instance];
     LPUART_Type * base = s_lpuartBase[instance];
@@ -975,7 +975,6 @@ status_t LPUART_DRV_SetBaudRate(uint32_t instance, uint32_t desiredBaudRate)
     osr = 4;
     sbr = (uint16_t)(lpuartSourceClock / (desiredBaudRate * osr));
     calculatedBaud = (lpuartSourceClock / (osr * sbr));
-
     if (calculatedBaud > desiredBaudRate)
     {
         baudDiff = calculatedBaud - desiredBaudRate;
@@ -984,33 +983,40 @@ status_t LPUART_DRV_SetBaudRate(uint32_t instance, uint32_t desiredBaudRate)
     {
         baudDiff = desiredBaudRate - calculatedBaud;
     }
-
+    /* find maximum osr */
+    maxOsr = lpuartSourceClock / desiredBaudRate;
+    if (maxOsr > 32U)
+    {
+        maxOsr = 32U;
+    }
     /* loop to find the best osr value possible, one that generates minimum baudDiff
      * iterate through the rest of the supported values of osr */
-    for (i = 5U; i <= 32U; i++)
+    if (maxOsr >= 5U)
     {
-        /* calculate the temporary sbr value   */
-        sbrTemp = (uint16_t)(lpuartSourceClock / (desiredBaudRate * i));
-        /* calculate the baud rate based on the temporary osr and sbr values */
-        calculatedBaud = (lpuartSourceClock / (i * sbrTemp));
+        for (i = 5U; i <= maxOsr; i++)
+        {
+            /* calculate the temporary sbr value   */
+            sbrTemp = (uint16_t)(lpuartSourceClock / (desiredBaudRate * i));
+            /* calculate the baud rate based on the temporary osr and sbr values */
+            calculatedBaud = (lpuartSourceClock / (i * sbrTemp));
 
-        if (calculatedBaud > desiredBaudRate)
-        {
-            tempDiff = calculatedBaud - desiredBaudRate;
-        }
-        else
-        {
-            tempDiff = desiredBaudRate - calculatedBaud;
-        }
+            if (calculatedBaud > desiredBaudRate)
+            {
+                tempDiff = calculatedBaud - desiredBaudRate;
+            }
+            else
+            {
+                tempDiff = desiredBaudRate - calculatedBaud;
+            }
 
-        if (tempDiff <= baudDiff)
-        {
-            baudDiff = tempDiff;
-            osr = i;  /* update and store the best osr value calculated */
-            sbr = sbrTemp;  /* update store the best sbr value calculated */
+            if (tempDiff <= baudDiff)
+            {
+                baudDiff = tempDiff;
+                osr = i;  /* update and store the best osr value calculated */
+                sbr = sbrTemp;  /* update store the best sbr value calculated */
+            }
         }
     }
-
     /* Check if osr is between 4x and 7x oversampling.
      * If so, then "BOTHEDGE" sampling must be turned on */
     if (osr < 8U)

@@ -44,6 +44,6 @@ void vLedControl(void *pvParameters)
         {
             /*Do Nothing*/
         }
-        // vTaskDelayUntil( &xNextWakeTime, TASK_PERIOD_10_MS );
+        vTaskDelayUntil( &xNextWakeTime, TASK_PERIOD_10_MS );
     }
 }

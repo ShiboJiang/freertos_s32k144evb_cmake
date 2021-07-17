@@ -158,6 +158,10 @@ void PDB_DRV_GetDefaultConfig(pdb_timer_config_t * const config)
     config->dmaEnable = false;
     /* Disable interrupt */
     config->intEnable = false;
+#if FEATURE_PDB_HAS_INSTANCE_BACKTOBACK
+    /* Disable instanceBackToBackEnable */	
+    config->instanceBackToBackEnable = false;
+#endif /* FEATURE_PDB_HAS_INSTANCE_BACKTOBACK */
 }
 
 /*FUNCTION*********************************************************************

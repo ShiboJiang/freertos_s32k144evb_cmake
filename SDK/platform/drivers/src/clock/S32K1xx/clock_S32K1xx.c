@@ -43,6 +43,10 @@
  * Violates MISRA 2012 Advisory Rule 8.7, External could be made static.
  * Function is defined for usage by application code.
  *
+* @section [global]
+ * Violates MISRA 2012 Required Rule 13.5, side effects on right hand of logical operator, ''&&''
+ * Those functions do not have side effects.
+ *
  * @section [global]
  * Violates MISRA 2012 Required Rule 14.3, controlling expressions shall not be invariant.
  * Code must address all devices.
@@ -69,9 +73,9 @@
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
- 
+
 static clock_manager_state_t g_clockState;
- 
+
 /* This frequency values should be set by different boards. */
 /* SIM */
 uint32_t g_TClkFreq[NUMBER_OF_TCLK_INPUTS];      /* TCLKx clocks    */
@@ -555,7 +559,7 @@ status_t CLOCK_DRV_Init(clock_manager_user_config_t const * config)
     clock_manager_user_config_t const * cfg = config;
 
     DEV_ASSERT(CLOCK_SYS_GetCurrentRunMode() == SCG_SYSTEM_CLOCK_MODE_RUN);
-    
+
     if (config == NULL)
     {
         /* Get default configuration */
@@ -731,7 +735,7 @@ static void CLOCK_SYS_SetSimConfiguration(const sim_clock_config_t * simClockCon
         SIM_SetTraceClockSource(SIM, simClockConfig->traceClockConfig.source);
 
         SIM_SetTraceClockConfig(SIM, false, 0U, 0U);
-        
+
         if (simClockConfig->traceClockConfig.divEnable)
         {
             SIM_SetTraceClockConfig(SIM,
@@ -1538,7 +1542,7 @@ static status_t CLOCK_SYS_GetSimClockFreq(clock_names_t clockName,
         case SIM_LPO_1K_CLK:
             if (PMC_GetLpoMode(PMC))
             {
-                freq = SIM_GetLpo1KStatus(SIM) ? LPO_1K_FREQUENCY : 0UL;
+                freq = ((SIM_GetLpo32KStatus(SIM)) && (SIM_GetLpo1KStatus(SIM))) ? LPO_1K_FREQUENCY : 0UL;
             }
 
             break;
@@ -2948,7 +2952,7 @@ static uint32_t CLOCK_SYS_GetLpoFreq(void)
             freq = SIM_GetLpo32KStatus(SIM) ? LPO_32K_FREQUENCY : 0UL;
             break;
         case 3U:  /* SIM_LPO_CLK_SEL_LPO_1K:  */
-            freq = SIM_GetLpo32KStatus(SIM) ? LPO_32K_FREQUENCY : 0UL;
+            freq = ((SIM_GetLpo32KStatus(SIM)) && (SIM_GetLpo1KStatus(SIM))) ? LPO_1K_FREQUENCY : 0UL;
             break;
         default:
             /* Invalid LPOCLKSEL selection.*/

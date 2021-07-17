@@ -7,7 +7,7 @@
 **     Version     : Component 01.197, Driver 01.00, CPU db: 3.00.000
 **     Datasheet   : S32K14XRM Rev. 2, 02/2017
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-07-15, 15:05, # CodeGen: 19
+**     Date/Time   : 2021-07-17, 17:24, # CodeGen: 21
 **     Abstract    :
 **
 **     Settings    :
@@ -64,6 +64,12 @@
 #include "edma_driver.h"
 #include "lpuart_driver.h"
 #include "lptmr_driver.h"
+#include "lpspi_master_driver.h"
+#include "lpspi_slave_driver.h"
+#include "lpspi_shared_function.h"
+#include "sbc_uja116x_driver.h"
+#include "sbc_uja116x_map.h"
+#include "can_pal.h"
 #include "system_S32K144.h"
 
 /* Including needed modules to compile this module/procedure */
@@ -74,6 +80,9 @@
 #include "dmaController1.h"
 #include "lpTmr1.h"
 #include "pin_mux.h"
+#include "sbc_uja116x1.h"
+#include "lpspiCom1.h"
+#include "can_pal1.h"
 
 #ifdef __cplusplus
 extern "C" {

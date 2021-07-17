@@ -195,5 +195,32 @@
       <EmptySection_DummyValue />
     </Events>
   </Bean>
+  <Bean name="sbc_uja116x1" type="sbc_uja116x">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="sbc_uja116x1" />
+      <Component_version v="S32K144_SDK01" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="can_pal1" type="can_pal">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="can_pal1" />
+      <Device v="CAN0" />
+      <Component_version v="S32_SDK" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
 </PE_PROJECT_SETTINGS_DOCUMENTATION>
 

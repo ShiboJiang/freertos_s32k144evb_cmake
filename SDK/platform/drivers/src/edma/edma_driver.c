@@ -566,7 +566,7 @@ status_t EDMA_DRV_ConfigSingleBlockTransfer(uint8_t virtualChannel,
 #ifdef FEATURE_DMA_HWV3
         EDMA_SetMinorLoopMappingCmd(edmaRegBase, dmaChannel, false);
 #else
-        EDMA_SetMinorLoopMappingCmd(edmaRegBase, false);
+        EDMA_SetMinorLoopMappingCmd(edmaRegBase, true);
 #endif
 
         /* Configure source and destination addresses */
