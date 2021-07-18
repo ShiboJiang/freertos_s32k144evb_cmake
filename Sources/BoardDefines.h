@@ -30,15 +30,27 @@
 #define EVB 
 
 #ifdef EVB
+    // #define LED1            15U
+    // #define LED2            16U
+    #define LED_GPIO        PTD
+    // #define LED_PORT        PORTD
+    #define LED_PORT_PCC    PCC_PORTD_CLOCK
+    // #define BTN_GPIO        PTC
+    #define BTN_PIN         13U
+    // #define BTN_PORT        PORTC
+    #define BTN_PORT_PCC    PCC_PORTC_CLOCK
+    // #define BTN_PORT_IRQn   PORTC_IRQn
+
+    #define LED_PORT        PORTD
+    #define GPIO_PORT       PTD
+    #define PCC_INDEX       PCC_PORTD_INDEX
     #define LED1            15U
     #define LED2            16U
-    #define LED_GPIO        PTD
-    #define LED_PORT        PORTD
-    #define LED_PORT_PCC    PCC_PORTD_CLOCK
+
     #define BTN_GPIO        PTC
-    #define BTN_PIN         13U
+    #define BTN1_PIN        13U
+    #define BTN2_PIN        12U
     #define BTN_PORT        PORTC
-    #define BTN_PORT_PCC    PCC_PORTC_CLOCK
     #define BTN_PORT_IRQn   PORTC_IRQn
 #else
     #define LED1            0U
@@ -55,7 +67,7 @@
 
 // #include "pins_driver.h"
 
-// void boardSetup(void)
+// void BoardInit(void)
 // {  
 //     /* Configure ports */
 //     PINS_DRV_SetMuxModeSel(LED_PORT, LED1,      PORT_MUX_AS_GPIO);
@@ -67,4 +79,6 @@
 //     PINS_DRV_SetPinIntSel(BTN_PORT, BTN_PIN, PORT_INT_FALLING_EDGE);
 // #endif
 // }
+
+extern void vPort_C_ISRHandler(void);
 #endif

@@ -151,21 +151,93 @@ static uint8 debug_test = 0u;
 
 #include "pins_driver.h"
 
-void boardSetup(void)
+void BoardInit(void)
 {
+    /* Initialize and configure clocks
+     *  -   Setup system clocks, dividers
+     *  -   see clock manager component for more details
+     */
+    CLOCK_SYS_Init(g_clockManConfigsArr, CLOCK_MANAGER_CONFIG_CNT,
+                   g_clockManCallbacksArr, CLOCK_MANAGER_CALLBACK_CNT);
+    CLOCK_SYS_UpdateConfiguration(0U, CLOCK_MANAGER_POLICY_AGREEMENT);
+
     /* Initialize pins
      *  -   See PinSettings component for more info
      */
     PINS_DRV_Init(NUM_OF_CONFIGURED_PINS, g_pin_mux_InitConfigArr);
     /* Configure ports */
-    PINS_DRV_SetMuxModeSel(LED_PORT, LED1, PORT_MUX_AS_GPIO); 
-    PINS_DRV_SetMuxModeSel(LED_PORT, LED2, PORT_MUX_AS_GPIO);
-    PINS_DRV_SetMuxModeSel(BTN_PORT, BTN_PIN, PORT_MUX_AS_GPIO);
-#ifdef EVB
-    PINS_DRV_SetPinIntSel(BTN_PORT, BTN_PIN, PORT_INT_RISING_EDGE);
-#else
-    PINS_DRV_SetPinIntSel(BTN_PORT, BTN_PIN, PORT_INT_FALLING_EDGE);
-#endif
+    // PINS_DRV_SetMuxModeSel(LED_PORT, LED1, PORT_MUX_AS_GPIO); 
+    // PINS_DRV_SetMuxModeSel(LED_PORT, LED2, PORT_MUX_AS_GPIO);
+    // PINS_DRV_SetMuxModeSel(BTN_PORT, BTN_PIN, PORT_MUX_AS_GPIO);
+}
+
+void GPIOInit(void)
+{
+    /* Output direction for LEDs */
+    PINS_DRV_SetPinsDirection(GPIO_PORT, (1 << LED1) | (1 << LED2));
+
+    /* Set Output value LEDs */
+    PINS_DRV_ClearPins(GPIO_PORT, 1 << LED2);
+
+    /* Start with LEDs off. */
+    PINS_DRV_SetPins(LED_GPIO, (1 << LED1) | (1 << LED2));
+
+    /* Setup button pin */
+    PINS_DRV_SetPinsDirection(BTN_GPIO, ~((1 << BTN1_PIN)|(1 << BTN2_PIN)));
+
+    /* Setup button pins interrupt */
+    PINS_DRV_SetPinIntSel(BTN_PORT, BTN1_PIN, PORT_INT_RISING_EDGE);
+    PINS_DRV_SetPinIntSel(BTN_PORT, BTN2_PIN, PORT_INT_RISING_EDGE);
+
+    /* Install Button interrupt handler */
+    INT_SYS_InstallHandler(BTN_PORT_IRQn, vPort_C_ISRHandler, (isr_t *)NULL);
+    /* Enable Button interrupt handler */
+    INT_SYS_EnableIRQ(BTN_PORT_IRQn);
+
+    /* The interrupt calls an interrupt safe API function - so its priority must
+    be equal to or lower than configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY. */
+    INT_SYS_SetPriority(BTN_PORT_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY);
+}
+
+void ADCInit(void)
+{
+    adc_resolution_t resolution;
+    status_t status;
+
+    resolution = ((extension_adc_s32k1xx_t *)(adc_pal1_InitConfig0.extension))->resolution;
+
+    if (resolution == ADC_RESOLUTION_8BIT)
+    {
+        adcMax = (uint16_t)(1 << 8);
+    }
+    else if (resolution == ADC_RESOLUTION_10BIT)
+    {
+        adcMax = (uint16_t)(1 << 10);
+    }
+    else
+    {
+        adcMax = (uint16_t)(1 << 12);
+    }
+
+    /* Initialize the ADC PAL
+     *  -   See ADC PAL component for the configuration details
+     */
+    for (int i = 0; i < 4; i++)
+    {
+        DEV_ASSERT(adc_pal1_ChansArray00[i] == ADC_CHN);
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        DEV_ASSERT(adc_pal1_ChansArray02[i] == ADC_CHN);
+    }
+    DEV_ASSERT(adc_pal1_instance.instIdx == ADC_INSTANCE);
+    status = ADC_Init(&adc_pal1_instance, &adc_pal1_InitConfig0);
+    DEV_ASSERT(status == STATUS_SUCCESS);
+
+    /* Send welcome message */
+    /* Start the selected SW triggered group of conversions */
+    status = ADC_StartGroupConversion(&adc_pal1_instance, selectedGroupIndex);
+    DEV_ASSERT(status == STATUS_SUCCESS);
 }
 
 /*-----------------------------------------------------------*/
@@ -332,43 +404,11 @@ static void prvQueueReceiveTask(void *pvParameters)
 
 static void prvSetupHardware(void)
 {
-
-    /* Initialize and configure clocks
-     *  -   Setup system clocks, dividers
-     *  -   see clock manager component for more details
-     */
-    adc_resolution_t resolution;
     status_t status;
-
-    CLOCK_SYS_Init(g_clockManConfigsArr, CLOCK_MANAGER_CONFIG_CNT,
-                   g_clockManCallbacksArr, CLOCK_MANAGER_CALLBACK_CNT);
-    CLOCK_SYS_UpdateConfiguration(0U, CLOCK_MANAGER_POLICY_AGREEMENT);
-
-    boardSetup();
-
-    /* Change LED1, LED2 to outputs. */
-    PINS_DRV_SetPinsDirection(LED_GPIO, (1 << LED1) | (1 << LED2));
-
-    /* Change BTN1 to input */
-    PINS_DRV_SetPinsDirection(BTN_GPIO, ~(1 << BTN_PIN));
-
-    /* Start with LEDs off. */
-    PINS_DRV_SetPins(LED_GPIO, (1 << LED1) | (1 << LED2));
-
-    resolution = ((extension_adc_s32k1xx_t *)(adc_pal1_InitConfig0.extension))->resolution;
-
-    if (resolution == ADC_RESOLUTION_8BIT)
-    {
-        adcMax = (uint16_t)(1 << 8);
-    }
-    else if (resolution == ADC_RESOLUTION_10BIT)
-    {
-        adcMax = (uint16_t)(1 << 10);
-    }
-    else
-    {
-        adcMax = (uint16_t)(1 << 12);
-    }
+    
+    BoardInit();
+    GPIOInit();
+    ADCInit();
 
     /* Initialize LPUART instance
      *  -   See LPUART component for configuration details
@@ -377,34 +417,6 @@ static void prvSetupHardware(void)
     status = LPUART_DRV_Init(INST_LPUART1, &lpuart1_State, &lpuart1_InitConfig0);
     DEV_ASSERT(status == STATUS_SUCCESS);
 
-    /* Initialize the ADC PAL
-     *  -   See ADC PAL component for the configuration details
-     */
-    for (int i = 0; i < 4; i++)
-    {
-        DEV_ASSERT(adc_pal1_ChansArray00[i] == ADC_CHN);
-    }
-    for (int i = 0; i < 5; i++)
-    {
-        DEV_ASSERT(adc_pal1_ChansArray02[i] == ADC_CHN);
-    }
-    DEV_ASSERT(adc_pal1_instance.instIdx == ADC_INSTANCE);
-    status = ADC_Init(&adc_pal1_instance, &adc_pal1_InitConfig0);
-    DEV_ASSERT(status == STATUS_SUCCESS);
-
-    /* Send welcome message */
-    /* Start the selected SW triggered group of conversions */
-    status = ADC_StartGroupConversion(&adc_pal1_instance, selectedGroupIndex);
-    DEV_ASSERT(status == STATUS_SUCCESS);
-
-    /* Install Button interrupt handler */
-    INT_SYS_InstallHandler(BTN_PORT_IRQn, vPort_C_ISRHandler, (isr_t *)NULL);
-    /* Enable Button interrupt handler */
-    INT_SYS_EnableIRQ(BTN_PORT_IRQn);
-
-    /* The interrupt calls an interrupt safe API function - so its priority must
-    be equal to or lower than configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY. */
-    INT_SYS_SetPriority(BTN_PORT_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY);
     /* Initial CAN */
     CAN_Init(&can_pal1_instance, &can_pal1_Config0);
     print(initOKStr);

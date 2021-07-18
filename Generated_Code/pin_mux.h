@@ -7,7 +7,7 @@
 **     Version     : Component 1.2.0, Driver 1.4, CPU db: 3.00.000
 **     Repository  : SDK_S32K1xx_15
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-07-17, 17:24, # CodeGen: 21
+**     Date/Time   : 2021-07-18, 12:27, # CodeGen: 22
 **     Abstract    :
 **
 **     Settings    :
@@ -286,13 +286,13 @@
 **                  Direction                              : <Automatic>
 **                Custom name                              : PTC
 **                PTC                                      : 
-**                  Pin 0                                  : <Automatic>
+**                  Pin 0                                  : PTC0
 **                  Direction                              : <Automatic>
-**                  Pin 1                                  : <Automatic>
+**                  Pin 1                                  : PTC1
 **                  Direction                              : <Automatic>
-**                  Pin 2                                  : <Automatic>
+**                  Pin 2                                  : PTC2
 **                  Direction                              : <Automatic>
-**                  Pin 3                                  : <Automatic>
+**                  Pin 3                                  : PTC3
 **                  Direction                              : <Automatic>
 **                  Pin 4(JTAG)                            : <Automatic>
 **                  Direction                              : <Automatic>
@@ -310,9 +310,9 @@
 **                  Direction                              : <Automatic>
 **                  Pin 11                                 : <Automatic>
 **                  Direction                              : <Automatic>
-**                  Pin 12                                 : <Automatic>
+**                  Pin 12                                 : PTC12
 **                  Direction                              : <Automatic>
-**                  Pin 13                                 : <Automatic>
+**                  Pin 13                                 : PTC13
 **                  Direction                              : <Automatic>
 **                  Pin 14                                 : <Automatic>
 **                  Direction                              : <Automatic>
@@ -324,7 +324,7 @@
 **                  Direction                              : <Automatic>
 **                Custom name                              : PTD
 **                PTD                                      : 
-**                  Pin 0                                  : <Automatic>
+**                  Pin 0                                  : PTD0
 **                  Direction                              : <Automatic>
 **                  Pin 1                                  : <Automatic>
 **                  Direction                              : <Automatic>
@@ -354,9 +354,9 @@
 **                  Direction                              : <Automatic>
 **                  Pin 14                                 : <Automatic>
 **                  Direction                              : <Automatic>
-**                  Pin 15                                 : <Automatic>
+**                  Pin 15                                 : PTD15
 **                  Direction                              : <Automatic>
-**                  Pin 16                                 : <Automatic>
+**                  Pin 16                                 : PTD16
 **                  Direction                              : <Automatic>
 **                  Pin 17                                 : <Automatic>
 **                  Direction                              : <Automatic>
@@ -1583,7 +1583,7 @@
 
 
 /*! @brief User number of configured pins */
-#define NUM_OF_CONFIGURED_PINS 4
+#define NUM_OF_CONFIGURED_PINS 13
 
 /*! @brief User configuration structure */
 extern pin_settings_config_t g_pin_mux_InitConfigArr[NUM_OF_CONFIGURED_PINS];
