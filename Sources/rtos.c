@@ -268,7 +268,7 @@ void rtos_start(void)
 
         xTaskCreate(vAdcApp, "ADC_Voltage_Calculate", TASK_ADC_STACK_SIZE, NULL, mainQUEUE_SEND_TASK_PRIORITY, NULL);
 
-        // xTaskCreate(vCanApp, "CAN_Communication", TASK_CAN_STACK_SIZE, NULL, mainQUEUE_SEND_TASK_PRIORITY, NULL);
+        xTaskCreate(vCanApp, "CAN_Communication", TASK_CAN_STACK_SIZE, NULL, mainQUEUE_SEND_TASK_PRIORITY, NULL);
 
         /* Create the software timer that is responsible for turning off the LED
         if the button is not pushed within 5000ms, as described at the top of

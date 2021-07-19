@@ -37,6 +37,10 @@ void vCanApp (void *pvParameters)
     /* Thread start */
     uLedCtlSig = LedCtlType_ON;
     CAN_Config();
+    /* Initial struct value */
+    memset(&recvMsg, 0u, sizeof(can_message_t));
+    memset(&sendMsg, 0u, sizeof(can_message_t));
+
     xNextWakeTime = xTaskGetTickCount();
     for( ;; )
     {
@@ -47,15 +51,15 @@ void vCanApp (void *pvParameters)
         CAN_Receive(&can_pal1_instance, RX_MAILBOX, &recvMsg);
 
         /* Wait until the previous FlexCAN receive is completed */
-        while(CAN_GetTransferStatus(&can_pal1_instance, RX_MAILBOX) == STATUS_BUSY);
+        // while(CAN_GetTransferStatus(&can_pal1_instance, RX_MAILBOX) == STATUS_BUSY);
 
         /* Check the received message ID and payload */
-        if((recvMsg.data[0] == LED0_CHANGE_REQUESTED) &&
+        if((recvMsg.data[0] == LedCtlType_OFF) &&
             recvMsg.id == RX_MSG_ID)
         {
             uLedCtlSig = LedCtlType_OFF;
         }
-        else if((recvMsg.data[0] == LED1_CHANGE_REQUESTED) &&
+        else if((recvMsg.data[0] == LedCtlType_ON) &&
                 recvMsg.id == RX_MSG_ID)
         {
             uLedCtlSig = LedCtlType_ON;

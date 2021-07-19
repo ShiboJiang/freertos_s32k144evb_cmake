@@ -34,14 +34,14 @@ void vLedControl(void *pvParameters)
         is it the expected value?  If it is, toggle the LED. */
         if( uLedCtlSig == LedCtlType_ON )
         {
-            PINS_DRV_SetPins(LED_GPIO, (1 << LED2));
+            PINS_DRV_ClearPins(LED_GPIO, (1 << LED2));
         }
         else if (uLedCtlSig == LedCtlType_OFF)
         {
-            PINS_DRV_ClearPins(LED_GPIO, (1 << LED2));
+            PINS_DRV_SetPins(LED_GPIO, (1 << LED2));
         }
         else
-        {
+        {   
             /*Do Nothing*/
         }
         vTaskDelayUntil( &xNextWakeTime, TASK_PERIOD_10_MS );

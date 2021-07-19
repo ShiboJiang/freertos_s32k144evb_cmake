@@ -24,8 +24,8 @@
 #define TASK_PERIOD_500_MS            ( 500 / portTICK_PERIOD_MS )
 #define TASK_PERIOD_1000_MS           ( 1000 / portTICK_PERIOD_MS )
 
-#define TASK_ADC_STACK_SIZE           ((uint16) 500)
-#define TASK_CAN_STACK_SIZE           ((uint16) 100)
+#define TASK_ADC_STACK_SIZE           (0x100)
+#define TASK_CAN_STACK_SIZE           (0x100)
 
 /* AUTOSAR Base to Platform types mapping */
 typedef uint8_t boolean_T;

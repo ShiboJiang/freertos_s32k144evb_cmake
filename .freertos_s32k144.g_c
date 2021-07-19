@@ -19,7 +19,7 @@
         <Line>Generated_Code\can_pal_cfg.h</Line>
         <Line>Generated_Code\adc_pal_cfg.h</Line>
       </GenExtraFiles>
-      <XtraAge0>1391678609</XtraAge0>
+      <XtraAge0>1391684540</XtraAge0>
       <XtraAge1>1391678609</XtraAge1>
       <XtraAge2>1391678609</XtraAge2>
       <GenExtraFileType2>4</GenExtraFileType2>
@@ -175,7 +175,7 @@
     </GenFiles>
     <SignalListFile />
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>41</ProjectModificationStamp>
+    <ProjectModificationStamp>45</ProjectModificationStamp>
   </Options>
   <CpuID_23>
     <Generated>true</Generated>
