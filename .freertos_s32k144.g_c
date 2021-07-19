@@ -19,9 +19,9 @@
         <Line>Generated_Code\can_pal_cfg.h</Line>
         <Line>Generated_Code\adc_pal_cfg.h</Line>
       </GenExtraFiles>
-      <XtraAge0>1391479644</XtraAge0>
-      <XtraAge1>1391561487</XtraAge1>
-      <XtraAge2>1391561487</XtraAge2>
+      <XtraAge0>1391678609</XtraAge0>
+      <XtraAge1>1391678609</XtraAge1>
+      <XtraAge2>1391678609</XtraAge2>
       <GenExtraFileType2>4</GenExtraFileType2>
       <GenExtraFileType1>4</GenExtraFileType1>
       <GenExtraFileType0>4</GenExtraFileType0>
@@ -175,7 +175,7 @@
     </GenFiles>
     <SignalListFile />
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>39</ProjectModificationStamp>
+    <ProjectModificationStamp>41</ProjectModificationStamp>
   </Options>
   <CpuID_23>
     <Generated>true</Generated>
@@ -183,8 +183,8 @@
     <GenComponentVersion>01.197</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1391562007</HeaderAge>
-    <CodeAge>1391561487</CodeAge>
+    <HeaderAge>1391678609</HeaderAge>
+    <CodeAge>1391678609</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>3</GenNumMethods>
     <SystemInit>true</SystemInit>
@@ -238,8 +238,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1391561487</HeaderAge>
-    <CodeAge>1391561487</CodeAge>
+    <HeaderAge>1391678609</HeaderAge>
+    <CodeAge>1391678609</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>6</GenNumMethods>
     <CLOCK_DRV_Init>true</CLOCK_DRV_Init>
@@ -467,8 +467,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1391412516</HeaderAge>
-    <CodeAge>1391415741</CodeAge>
+    <HeaderAge>1391678609</HeaderAge>
+    <CodeAge>1391678609</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>8</GenNumMethods>
     <ADC_Init>true</ADC_Init>
@@ -526,8 +526,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1391412516</HeaderAge>
-    <CodeAge>1391412516</CodeAge>
+    <HeaderAge>1391678609</HeaderAge>
+    <CodeAge>1391678609</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>19</GenNumMethods>
     <LPUART_DRV_GetDefaultConfig>true</LPUART_DRV_GetDefaultConfig>
@@ -568,8 +568,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1391412516</HeaderAge>
-    <CodeAge>1391418200</CodeAge>
+    <HeaderAge>1391678609</HeaderAge>
+    <CodeAge>1391678609</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>32</GenNumMethods>
     <EDMA_DRV_Init>true</EDMA_DRV_Init>
@@ -623,8 +623,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1391412516</HeaderAge>
-    <CodeAge>1391412516</CodeAge>
+    <HeaderAge>1391678609</HeaderAge>
+    <CodeAge>1391678609</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>17</GenNumMethods>
     <LPTMR_DRV_InitConfigStruct>true</LPTMR_DRV_InitConfigStruct>
@@ -661,8 +661,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>1.4</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1391616869</HeaderAge>
-    <CodeAge>1391616869</CodeAge>
+    <HeaderAge>1391679169</HeaderAge>
+    <CodeAge>1391679169</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>25</GenNumMethods>
     <PINS_DRV_Init>true</PINS_DRV_Init>
@@ -708,8 +708,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1391561487</HeaderAge>
-    <CodeAge>1391561487</CodeAge>
+    <HeaderAge>1391678609</HeaderAge>
+    <CodeAge>1391678609</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>31</GenNumMethods>
     <SBC_InitDriver>true</SBC_InitDriver>
@@ -758,8 +758,8 @@
       <GenComponentVersion>1.0.0</GenComponentVersion>
       <GenDriverVersion>01.00</GenDriverVersion>
       <GenEventModule />
-      <HeaderAge>1391561487</HeaderAge>
-      <CodeAge>1391561487</CodeAge>
+      <HeaderAge>1391678609</HeaderAge>
+      <CodeAge>1391678609</CodeAge>
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>17</GenNumMethods>
       <LPSPI_DRV_MasterGetDefaultConfig>true</LPSPI_DRV_MasterGetDefaultConfig>
@@ -802,8 +802,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1391561487</HeaderAge>
-    <CodeAge>1391561487</CodeAge>
+    <HeaderAge>1391678609</HeaderAge>
+    <CodeAge>1391678609</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>16</GenNumMethods>
     <CAN_Init>true</CAN_Init>

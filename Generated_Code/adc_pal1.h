@@ -7,7 +7,7 @@
 **     Version     : Component SDK_S32K1xx_15, Driver 01.00, CPU db: 3.00.000
 **     Repository  : SDK_S32K1xx_15
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-07-15, 08:41, # CodeGen: 9
+**     Date/Time   : 2021-07-19, 10:36, # CodeGen: 25
 **     Contents    :
 **         ADC_Init                   - status_t ADC_Init(const adc_instance_t * const instance, const adc_config_t *...
 **         ADC_Deinit                 - status_t ADC_Deinit(const adc_instance_t * const instance);

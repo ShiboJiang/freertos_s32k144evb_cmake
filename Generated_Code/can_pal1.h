@@ -7,7 +7,7 @@
 **     Version     : Component SDK_S32K1xx_15, Driver 01.00, CPU db: 3.00.000
 **     Repository  : SDK_S32K1xx_15
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-07-17, 17:24, # CodeGen: 21
+**     Date/Time   : 2021-07-19, 10:36, # CodeGen: 25
 **     Contents    :
 **         CAN_Init                     - status_t CAN_Init(const can_instance_t * const instance, const...
 **         CAN_Deinit                   - status_t CAN_Deinit(const can_instance_t * const instance);

@@ -7,7 +7,7 @@
 **     Version     : Component 1.2.0, Driver 1.4, CPU db: 3.00.000
 **     Repository  : SDK_S32K1xx_15
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-07-18, 12:27, # CodeGen: 22
+**     Date/Time   : 2021-07-19, 10:53, # CodeGen: 27
 **     Abstract    :
 **
 **     Settings    :
@@ -287,13 +287,13 @@
 **                Custom name                              : PTC
 **                PTC                                      : 
 **                  Pin 0                                  : PTC0
-**                  Direction                              : <Automatic>
+**                  Direction                              : Output
 **                  Pin 1                                  : PTC1
-**                  Direction                              : <Automatic>
+**                  Direction                              : Output
 **                  Pin 2                                  : PTC2
-**                  Direction                              : <Automatic>
+**                  Direction                              : Output
 **                  Pin 3                                  : PTC3
-**                  Direction                              : <Automatic>
+**                  Direction                              : Output
 **                  Pin 4(JTAG)                            : <Automatic>
 **                  Direction                              : <Automatic>
 **                  Pin 5(JTAG)                            : <Automatic>
@@ -311,9 +311,9 @@
 **                  Pin 11                                 : <Automatic>
 **                  Direction                              : <Automatic>
 **                  Pin 12                                 : PTC12
-**                  Direction                              : <Automatic>
+**                  Direction                              : Input
 **                  Pin 13                                 : PTC13
-**                  Direction                              : <Automatic>
+**                  Direction                              : Input
 **                  Pin 14                                 : <Automatic>
 **                  Direction                              : <Automatic>
 **                  Pin 15                                 : <Automatic>
@@ -325,7 +325,7 @@
 **                Custom name                              : PTD
 **                PTD                                      : 
 **                  Pin 0                                  : PTD0
-**                  Direction                              : <Automatic>
+**                  Direction                              : Output
 **                  Pin 1                                  : <Automatic>
 **                  Direction                              : <Automatic>
 **                  Pin 2                                  : <Automatic>
@@ -355,9 +355,9 @@
 **                  Pin 14                                 : <Automatic>
 **                  Direction                              : <Automatic>
 **                  Pin 15                                 : PTD15
-**                  Direction                              : <Automatic>
+**                  Direction                              : Output
 **                  Pin 16                                 : PTD16
-**                  Direction                              : <Automatic>
+**                  Direction                              : Output
 **                  Pin 17                                 : <Automatic>
 **                  Direction                              : <Automatic>
 **                Custom name                              : PTE
@@ -439,14 +439,14 @@
 **                  Direction                              : <Automatic>
 **                  Peripheral Chip Select 2               : <Automatic>
 **                  Direction                              : <Automatic>
-**                  Peripheral Chip Select 3               : <Automatic>
-**                  Direction                              : <Automatic>
-**                  Serial Clock                           : <Automatic>
-**                  Direction                              : <Automatic>
-**                  Serial Data Input                      : <Automatic>
-**                  Direction                              : <Automatic>
-**                  Serial Data Output                     : <Automatic>
-**                  Direction                              : <Automatic>
+**                  Peripheral Chip Select 3               : PTB17
+**                  Direction                              : Output
+**                  Serial Clock                           : PTB14
+**                  Direction                              : Output
+**                  Serial Data Input                      : PTB15
+**                  Direction                              : Input
+**                  Serial Data Output                     : PTB16
+**                  Direction                              : Output
 **                Custom name                              : LPSPI2
 **                LPSPI2                                   : 
 **                  Peripheral Chip Select 0               : <Automatic>
@@ -1583,7 +1583,7 @@
 
 
 /*! @brief User number of configured pins */
-#define NUM_OF_CONFIGURED_PINS 13
+#define NUM_OF_CONFIGURED_PINS 17
 
 /*! @brief User configuration structure */
 extern pin_settings_config_t g_pin_mux_InitConfigArr[NUM_OF_CONFIGURED_PINS];
