@@ -9,6 +9,15 @@ freertos_s32k144evb_cmake
 
 # 使用方法
 
+本工程每10ms 会发送 can 报文，上报当前电位器电压值，CAN 波特率为 500 Kbps，报文ID 0x100，byte0 为显示电压数值， 实际电压 = 报文数值 / 50
+
+当发送 ID 为 0x101 帧报文时，会进行led控制
+    - byte0 = 1 ，led on
+    - byte0 = 2 ，led off
+
+本工程集成串口调试，会周期打印当前ADC 测得的实际电压值，以便与can信号进行比对，串口波特率为 115200
+# 构建方法
+
 ## 使用S32DS 
 到官网上下载 [S32DS](https://www.nxp.com/design/software/development-software/s32-design-studio-ide/s32-design-studio-for-arm:S32DS-ARM), 然后直接导入工程文件夹就好
 
