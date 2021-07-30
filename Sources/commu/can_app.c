@@ -14,11 +14,11 @@
 
 can_buff_config_t g_CanBufferConfig =
 {
-        .enableFD = false,
-        .enableBRS = false,
-        .fdPadding = 0U,
-        .idType = CAN_MSG_ID_STD,
-        .isRemote = false
+    .enableFD = false,
+    .enableBRS = false,
+    .fdPadding = 0U,
+    .idType = CAN_MSG_ID_STD,
+    .isRemote = false
 };
 
 static void CAN_Config(void);
@@ -74,6 +74,7 @@ void vCanApp (void *pvParameters)
         sendMsg.cs = 0U;
         sendMsg.id = TX_MSG_ID;
         sendMsg.data[0] = (uint8)(avgVolts*50);
+        sendMsg.data[1] = (uint8)LED_2_St;
         sendMsg.length = 8U;
         CAN_Send(&can_pal1_instance, TX_MAILBOX, &sendMsg);
         vTaskDelayUntil( &xNextWakeTime, TASK_PERIOD_10_MS );

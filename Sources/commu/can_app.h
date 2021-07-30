@@ -26,6 +26,7 @@
 #include "clockMan1.h"
 #include "string.h"
 #include "uart_app.h"
+#include "LedControl.h"
 
 /* Macro Define -------------------------------------------------------------*/
 #define TX_MAILBOX  (1UL)

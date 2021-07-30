@@ -27,6 +27,7 @@
 
 /* Macro Define -------------------------------------------------------------*/
 #define userQUEUE_SEND_MS_10            ( 10 / portTICK_PERIOD_MS )
+#define LED_2_St		        (PINS_DRV_GetPinsOutput(LED_GPIO)>>LED2)&0x01
 
 /* Import Parameters --------------------------------------------------------*/
 extern QueueHandle_t xLedCtrlSig;
